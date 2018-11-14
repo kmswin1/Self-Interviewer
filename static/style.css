@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+/*header*/
+header{
+    /*height: 75px;*/
+    /*background-color: #b691f5;*/
+    /*border: 0px;*/
+    /*position: fixed;*/
+    /*width: 100%;*/
+    /*!*z-index: 9999;*!*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*display: flex;*/
+    /*list-style-type: none;*/
+    /*align-items: center;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: #b594f2;
+}
+
+.headA {
+    display: inline-block;
+    line-height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #b594f2;
+    /*background-color: var(--main-color);*/
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.headB {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.headB a {
+    display: block;
+    padding: 15px;
+    color: inherit;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+h1{
+    padding-left: 15px;
+    color: white;
+    line-height: 50px;
+    float: left;
+}
+
+/*네비바 메뉴 오른쪽 정렬*/
+.menu{
+    text-decoration: none;
+    list-style: none;
+    float: right;
+}
+
+.menu li{
+    float: left;
+}
+
+.menu a{
+    line-height: 50px;
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+    /*display: block;*/
+}
+
+/*common*/
+.wrapper{
+    width: 1170px;
+    margin: 0 auto;
+    text-underline: none;
+}
+
+.clearfix{
+    content: '';
+    display: block;
+    clear: both;
+}
