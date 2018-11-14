@@ -1,13 +1,10 @@
 from flask import Flask
-app = Flask(__name__)
+from flask import render_template
+app = Flask(__name__, template_folder='static/templates')
 
 @app.route('/')
 def main():
-    return 'Team 1'
-
-@app.route('/signin/<userid>')
-def sign_in(userid):
-    return '%s information' %userid
+    return render_template("main.html")
 
 @app.route('/question')
 def question():
@@ -26,4 +23,4 @@ def community():
     return 'community'
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0')
+  app.run(host='0.0.0.0', debug=True)
