@@ -1,5 +1,5 @@
 
-from flask import request
+from flask import Flask, request
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
