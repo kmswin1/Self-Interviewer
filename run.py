@@ -1,6 +1,24 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, request
+import json
+import pymysql
 app = Flask(__name__, template_folder='static/templates')
+
+def getConnection():
+    return pymysql.connect(host='54.244.72.128', port = '3306', user='root', password='1234',
+                           db='InterviewNet', charset='utf8')
+
+@app.route('/signin/<userid>', methods=['POST', 'GET'])
+def sign_in(userid):
+    error = None
+    if request.method == 'POST':
+        if valid_login(request.form['userid'],
+                       request.form['userpw']):
+            return log_the_user_in(request.form['userid'])
+        else:
+            error = 'Invalid user id/password'
+    # 아래의 코드는 요청이 GET 이거나, 인증정보가 잘못됐을때 실행된다.
+    return render_template('signin.html', error=error)
 
 @app.route('/')
 def main():
@@ -19,8 +37,8 @@ def studyroom():
     return 'studyroom'
 
 @app.route('/community')
-def community():
-    return 'community'
+def community(info,review):
+    return render_template("community.html",info = info, review = review)
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
