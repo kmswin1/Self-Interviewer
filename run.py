@@ -25,19 +25,19 @@ def main():
 
 @app.route('/question')
 def question():
-    return 'question'
+    return render_template("question.html")
 
 @app.route('/matching')
 def matching():
-    return 'matching'
+    return render_template("matching.html")
 
 @app.route('/studyroom')
 def studyroom():
-    return 'studyroom'
+    return render_template("studyroom.html")
 
 @app.route('/community')
-def community(info,review):
-    return render_template("community.html",info = info, review = review)
+def community():
+    return render_template("community.html")
 
 @app.route('/getInfo', methods=['GET'])
 def getInfo():
