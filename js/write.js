@@ -28,7 +28,7 @@ function samp(){
 
   $.ajax({
             type: 'POST',
-            url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/test",
+            url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/writeInfo",
             contentType: 'application/json; charset=utf-8',
             traditional: true,
             async: false,
