@@ -39,12 +39,13 @@ def studyroom():
 def community(info,review):
     return render_template("community.html",info = info, review = review)
 
-@app.route('/getInfo', methods='GET')
+@app.route('/getInfo', methods=['GET'])
 def getInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
+    return 1
 
-@app.route('/writeInfo', methods='POST')
+@app.route('/writeInfo', methods=['POST'])
 def writeInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
@@ -57,15 +58,17 @@ def writeInfo():
     conn.close()
 
 
-@app.route('/reviseInfo', methods='PUT')
+@app.route('/reviseInfo', methods=['PUT'])
 def reviseInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
+    return 1
 
-@app.route('/delInfo', methods='DELETE')
+@app.route('/delInfo', methods=['DELETE'])
 def delInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
+    return 1
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
