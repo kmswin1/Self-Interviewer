@@ -17,7 +17,6 @@ def sign_in(userid):
             return log_the_user_in(request.form['userid'])
         else:
             error = 'Invalid user id/password'
-    # 아래의 코드는 요청이 GET 이거나, 인증정보가 잘못됐을때 실행된다.
     return render_template('signin.html', error=error)
 
 @app.route('/')

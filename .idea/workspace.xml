@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6979421d-a8a2-4e7a-8a89-9ecf080ef967" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,14 +26,14 @@
         <counts>
           <entry key="html" value="7" />
           <entry key="md" value="1" />
-          <entry key="py" value="4" />
+          <entry key="py" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="7" />
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="4" />
+          <entry key="Python" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -42,13 +41,13 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="153" />
-          <entry key="Python" value="1032" />
+          <entry key="Python" value="1060" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="153" />
-          <entry key="py" value="1032" />
+          <entry key="py" value="1060" />
         </counts>
       </usages-collector>
     </session>
@@ -58,12 +57,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="54" column="108" selection-start-line="54" selection-start-column="108" selection-end-line="54" selection-end-column="108" />
+            <state relative-caret-position="105">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1542378383758" expanded="true" signature="1059:1060" ph="..." />
-                <marker date="1542378383758" expanded="true" signature="1890:1970" ph="..." />
+                <marker date="1542378676570" expanded="true" signature="1014:1015" ph="..." />
+                <marker date="1542378676570" expanded="true" signature="1877:1957" ph="..." />
               </folding>
             </state>
           </provider>
@@ -72,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/community.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
+            <state relative-caret-position="520">
               <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
             </state>
           </provider>
@@ -241,7 +240,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26251528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -285,25 +283,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="54" column="108" selection-start-line="54" selection-start-column="108" selection-end-line="54" selection-end-column="108" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1542378383758" expanded="true" signature="1059:1060" ph="..." />
-            <marker date="1542378383758" expanded="true" signature="1890:1970" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/community.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -321,6 +300,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/templates/signin.html">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/templates/community.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/flask/templating.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1542378676570" expanded="true" signature="1014:1015" ph="..." />
+            <marker date="1542378676570" expanded="true" signature="1877:1957" ph="..." />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
