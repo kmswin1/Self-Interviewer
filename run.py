@@ -17,7 +17,6 @@ def sign_in(userid):
             return log_the_user_in(request.form['userid'])
         else:
             error = 'Invalid user id/password'
-    # 아래의 코드는 요청이 GET 이거나, 인증정보가 잘못됐을때 실행된다.
     return render_template('signin.html', error=error)
 
 @app.route('/')
@@ -40,12 +39,13 @@ def studyroom():
 def community(info,review):
     return render_template("community.html",info = info, review = review)
 
-@app.route('/getInfo', methods='GET')
+@app.route('/getInfo', methods=['GET'])
 def getInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
+    return 1
 
-@app.route('/writeInfo', methods='POST')
+@app.route('/writeInfo', methods=['POST'])
 def writeInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
@@ -58,15 +58,17 @@ def writeInfo():
     conn.close()
 
 
-@app.route('/reviseInfo', methods='PUT')
+@app.route('/reviseInfo', methods=['PUT'])
 def reviseInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
+    return 1
 
-@app.route('/delInfo', methods='DELETE')
+@app.route('/delInfo', methods=['DELETE'])
 def delInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
+    return 1
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
