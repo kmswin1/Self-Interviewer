@@ -40,5 +40,33 @@ def studyroom():
 def community(info,review):
     return render_template("community.html",info = info, review = review)
 
+@app.route('/getInfo', methods='GET')
+def getInfo():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+
+@app.route('/writeInfo', methods='POST')
+def writeInfo():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.json
+
+    sql = "insert into Info(author, title, text, time, hit) values(%s, %s, %s, %s, %s)"
+    curs.execute(sql, (jsonObj["sid"], jsonObj["stitle"], jsonObj["stext"], jsonObj["stime"], jsonObj["sview"]))
+    conn.commit()
+    print ("writeInfo success")
+    conn.close()
+
+
+@app.route('/reviseInfo', methods='PUT')
+def reviseInfo():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+
+@app.route('/delInfo', methods='DELETE')
+def delInfo():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
