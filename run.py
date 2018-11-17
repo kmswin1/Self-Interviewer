@@ -18,7 +18,7 @@ def not_found(error):
 #<------------------------------>
 
 def getConnection():
-    return pymysql.connect(host='54.244.72.128', port = '3306', user='root', password='1234',
+    return pymysql.connect(host='54.244.72.128', user='root', password='1234',
                            db='InterviewNet', charset='utf8')
 
 @app.route('/signin')
@@ -76,6 +76,7 @@ def writeInfo():
     curs = conn.cursor(pymysql.cursors.DictCursor)
     jsonObj = request.get_json()
 
+    print (jsonObj)
     sql = "insert into Info(author, title, text, time, hit) values(%s, %s, %s, %s, %s)"
     curs.execute(sql, (jsonObj["sid"], jsonObj["stitle"], jsonObj["stext"], jsonObj["stime"], jsonObj["sview"]))
     conn.commit()

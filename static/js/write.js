@@ -35,9 +35,11 @@ function samp(){
             data: json_data,
             success: function (data) {
                 console.log(data);
+		console.log("success");
             },
             error: function (xhr) {
                 console.log (data);
+		console.log("failed");
             }
         });
                 console.log (data);
