@@ -4,6 +4,19 @@ import json
 import pymysql
 app = Flask(__name__, template_folder='static/templates')
 
+# <------ error hander---------->
+
+@app.errorhandler(500)
+def internal_error(error):
+
+    return "500 error"
+
+@app.errorhandler(404)
+def not_found(error):
+    return "404 error",404
+
+#<------------------------------>
+
 def getConnection():
     return pymysql.connect(host='54.244.72.128', port = '3306', user='root', password='1234',
                            db='InterviewNet', charset='utf8')
@@ -61,7 +74,7 @@ def getInfo():
 def writeInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
-    jsonObj = request.json
+    jsonObj = request.get_json()
 
     sql = "insert into Info(author, title, text, time, hit) values(%s, %s, %s, %s, %s)"
     curs.execute(sql, (jsonObj["sid"], jsonObj["stitle"], jsonObj["stext"], jsonObj["stime"], jsonObj["sview"]))
