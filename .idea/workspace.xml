@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6979421d-a8a2-4e7a-8a89-9ecf080ef967" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/write.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/write.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +30,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="25" />
-          <entry key="js" value="4" />
+          <entry key="js" value="5" />
           <entry key="md" value="1" />
           <entry key="py" value="7" />
         </counts>
@@ -37,7 +38,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="25" />
-          <entry key="JavaScript" value="4" />
+          <entry key="JavaScript" value="5" />
           <entry key="Markdown" value="1" />
           <entry key="Python" value="7" />
         </counts>
@@ -46,15 +47,15 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="282" />
-          <entry key="JavaScript" value="2" />
+          <entry key="HTML" value="290" />
+          <entry key="JavaScript" value="55" />
           <entry key="Python" value="1273" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="282" />
-          <entry key="js" value="2" />
+          <entry key="html" value="290" />
+          <entry key="js" value="55" />
           <entry key="py" value="1273" />
         </counts>
       </usages-collector>
@@ -65,34 +66,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/community.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+            <state relative-caret-position="246">
+              <caret line="98" column="55" selection-start-line="98" selection-start-column="55" selection-end-line="98" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1542429976995" expanded="true" signature="1289:1290" ph="..." />
-                <marker date="1542429976995" expanded="true" signature="1462:1584" ph="..." />
-                <marker date="1542429976995" expanded="true" signature="2516:2518" ph="..." />
+                <marker date="1542430710086" expanded="true" signature="2521:2523" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/write.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state relative-caret-position="491">
+              <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/studyroom.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -100,15 +104,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1036">
               <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/templates/mypage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="52" selection-start-line="52" selection-end-line="76" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -182,9 +177,9 @@
         <option value="$PROJECT_DIR$/static/templates/signin.html" />
         <option value="$PROJECT_DIR$/static/templates/studyroom.html" />
         <option value="$PROJECT_DIR$/static/templates/write.html" />
+        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/static/templates/community.html" />
         <option value="$PROJECT_DIR$/static/js/write.js" />
-        <option value="$PROJECT_DIR$/run.py" />
       </list>
     </option>
   </component>
@@ -303,7 +298,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26556778" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26556778" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -317,7 +312,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3877551" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3877551" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -421,24 +416,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/community.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1036">
           <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/write.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -448,10 +429,25 @@
           <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1542429976995" expanded="true" signature="1289:1290" ph="..." />
-            <marker date="1542429976995" expanded="true" signature="1462:1584" ph="..." />
-            <marker date="1542429976995" expanded="true" signature="2516:2518" ph="..." />
+            <marker date="1542430710086" expanded="true" signature="2521:2523" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/templates/community.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="98" column="55" selection-start-line="98" selection-start-column="55" selection-end-line="98" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/studyroom.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/write.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
         </state>
       </provider>
     </entry>
