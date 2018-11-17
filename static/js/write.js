@@ -11,8 +11,8 @@ function samp(){
   var nowDate = new Date();
   console.log(nowDate);
 
-  var sample = "this is a sample"
-  var stext = "hello everyone"
+  var sample = $("#stitle").val();
+  var stext = $("#stext").val();
   var sid = "sampleid";
   var stime = nowDate.getMonth() + "/" + nowDate.getDate() + "/" + nowDate.getHours() + ":" + nowDate.getMinutes();
   var sview = "0";
