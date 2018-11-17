@@ -8,15 +8,15 @@ def getConnection():
     return pymysql.connect(host='54.244.72.128', port = '3306', user='root', password='1234',
                            db='InterviewNet', charset='utf8')
 
-@app.route('/signin/<userid>', methods=['POST', 'GET'])
+@app.route('/signin')
 def sign_in(userid):
     error = None
-    if request.method == 'POST':
-        if valid_login(request.form['userid'],
-                       request.form['userpw']):
-            return log_the_user_in(request.form['userid'])
-        else:
-            error = 'Invalid user id/password'
+#    if request.method == 'POST':
+ #       if valid_login(request.form['userid'],
+  #                     request.form['userpw']):
+   #         return log_the_user_in(request.form['userid'])
+    #    else:
+     #       error = 'Invalid user id/password'
     return render_template('signin.html', error=error)
 
 @app.route('/')
