@@ -29,7 +29,7 @@
 
 <body>
 
-  <a div class="brand" href="index.html">Interviewee</a>
+  <a div class="brand" href="{{ url_for('index') }}">Interviewee</a>
   <div class="address-bar">소프트웨어 팀프로젝트 1팀</div>
 
     <!-- Navigation -->
@@ -66,8 +66,8 @@
                     </li>
                     <li>
                         <button type="button-right" class="btn btn-info btn-sm"> Log-in</button>
-                        <input type="button" class="btn btn-info btn-sm" value="Sign-in" onClick="location.href ='signin.html'">
-                        <input type="button" class="btn btn-info btn-sm" value="MyPage" onClick="location.href ='mypage.html'">
+                        <input type="button" class="btn btn-info btn-sm" value="Sign-in" onClick='location.href="{{ url_for('sign_in') }}"'>
+                        <input type="button" class="btn btn-info btn-sm" value="MyPage" onClick='location.href="{{ url_for('mypage') }}"'>
                     </li>
                 </ul>
             </div>

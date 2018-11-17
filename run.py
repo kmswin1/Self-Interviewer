@@ -43,6 +43,14 @@ def community():
 def write():
     return render_template("write.html")
 
+@app.route('/index')
+def index():
+    return render_template("index.html")
+
+@app.route('/mypage')
+def mypage():
+    return render_template("mypage.html")
+
 @app.route('/getInfo', methods=['GET'])
 def getInfo():
     conn = getConnection()
