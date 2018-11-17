@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6979421d-a8a2-4e7a-8a89-9ecf080ef967" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/community.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/community.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/matching.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/matching.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/mypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/mypage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/question.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/studyroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/studyroom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/write.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/write.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +31,7 @@
           <entry key="html" value="25" />
           <entry key="js" value="3" />
           <entry key="md" value="1" />
-          <entry key="py" value="6" />
+          <entry key="py" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -48,7 +39,7 @@
           <entry key="HTML" value="25" />
           <entry key="JavaScript" value="3" />
           <entry key="Markdown" value="1" />
-          <entry key="Python" value="6" />
+          <entry key="Python" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -56,20 +47,20 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="282" />
-          <entry key="Python" value="1174" />
+          <entry key="Python" value="1195" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="282" />
-          <entry key="py" value="1174" />
+          <entry key="py" value="1195" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/community.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -78,20 +69,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/templates/index.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
+            <state relative-caret-position="118">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1542429409547" expanded="true" signature="1071:1072" ph="..." />
+                <marker date="1542429409547" expanded="true" signature="1244:1366" ph="..." />
+                <marker date="1542429409547" expanded="true" signature="2292:2294" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/templates/main.html">
+        <entry file="file://$PROJECT_DIR$/static/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+            <state relative-caret-position="1036">
+              <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -175,7 +172,6 @@
         <option value="$PROJECT_DIR$/community.py" />
         <option value="$PROJECT_DIR$/static/templates/test.html" />
         <option value="$USER_HOME$/Desktop/test.html" />
-        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/static/templates/index.html" />
         <option value="$PROJECT_DIR$/static/templates/main.html" />
         <option value="$PROJECT_DIR$/static/templates/matching.html" />
@@ -185,6 +181,7 @@
         <option value="$PROJECT_DIR$/static/templates/studyroom.html" />
         <option value="$PROJECT_DIR$/static/templates/write.html" />
         <option value="$PROJECT_DIR$/static/templates/community.html" />
+        <option value="$PROJECT_DIR$/run.py" />
       </list>
     </option>
   </component>
@@ -376,19 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1542428717485" expanded="true" signature="1080:1081" ph="..." />
-            <marker date="1542428717485" expanded="true" signature="1253:1375" ph="..." />
-            <marker date="1542428717485" expanded="true" signature="2259:2261" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="712">
@@ -441,17 +425,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/templates/community.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1036">
+          <caret line="76" column="10" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1542429409547" expanded="true" signature="1071:1072" ph="..." />
+            <marker date="1542429409547" expanded="true" signature="1244:1366" ph="..." />
+            <marker date="1542429409547" expanded="true" signature="2292:2294" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

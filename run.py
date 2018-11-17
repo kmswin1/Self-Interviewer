@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template, request
+from flask import render_template, request, redirect, url_for
 import json
 import pymysql
 app = Flask(__name__, template_folder='static/templates')
@@ -68,6 +68,7 @@ def writeInfo():
     conn.commit()
     print ("writeInfo success")
     conn.close()
+    return redirect(url_for('community'))
 
 
 @app.route('/reviseInfo', methods=['PUT'])
