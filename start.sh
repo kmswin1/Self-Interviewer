@@ -1,2 +1,2 @@
-nohup python run.py &
+nohup python3 run.py &
 
