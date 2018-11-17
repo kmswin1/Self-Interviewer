@@ -39,6 +39,10 @@ def studyroom():
 def community():
     return render_template("community.html")
 
+@app.route('/write')
+def write():
+    return render_template("write.html")
+
 @app.route('/getInfo', methods=['GET'])
 def getInfo():
     conn = getConnection()

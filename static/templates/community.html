@@ -86,7 +86,7 @@
                     <h2 class="intro-text text-center">커뮤니티 게시판
                         <strong>구현하기</strong>
                     </h2>
-                      <input type="button" class="btn btn-info btn-sm" value="글쓰기" onClick="location.href ='write.html'">
+                      <input type="button" class="btn btn-info btn-sm" value="글쓰기" onClick='location.href="{{ url_for('write') }}"'>
                     <hr>
                     <p>커뮤니티 게시판~~~~구현하기</p>
                     <form role="form">
@@ -110,7 +110,7 @@
                             </div>
                             <div class="form-group col-lg-12">
                                 <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="button" class="btn btn-default" onclick="samp()">Submit</button>
                             </div>
                         </div>
                     </form>
