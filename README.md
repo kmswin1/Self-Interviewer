@@ -1,3 +1,0 @@
-# InterviewNet
-
-python run.py
