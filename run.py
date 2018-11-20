@@ -78,7 +78,7 @@ def mypage():
 def getInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
-    sql = "select * from Info"
+    sql = "select * from Info order by id desc"
     curs.execute(sql)
     conn.commit()
     results = curs.fetchall()
