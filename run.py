@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template, request, redirect, url_for
+from flask_cors import CORS
 import json
 import pymysql
 app = Flask(__name__, template_folder='static/templates')
@@ -17,6 +18,13 @@ def not_found(error):
 
 #<------------------------------>
 
+#<--------cors permission settins----------->
+
+cors = CORS(app, resources={
+  r"/*": {"origin": "*"},
+})
+
+#<------------------------------------------>
 def getConnection():
     return pymysql.connect(host='54.244.72.128', user='root', password='1234',
                            db='InterviewNet', charset='utf8')
