@@ -37,5 +37,5 @@ function send(){
 
             }
         });
-        location.href="community.html"
+        location.href="community"
 }
