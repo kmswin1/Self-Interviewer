@@ -3,8 +3,10 @@ from flask import render_template, request, redirect, url_for
 from flask_cors import CORS
 import json
 import pymysql
-app = Flask(__name__, template_folder='static/templates')
+import os
 
+PWD = os.path.dirname(os.path.realpath(__file__))
+app = Flask(__name__, template_folder="static/templates", static_folder="static")
 # <------ error hander---------->
 
 @app.errorhandler(500)
@@ -38,11 +40,11 @@ def sign_in(userid):
    #         return log_the_user_in(request.form['userid'])
     #    else:
      #       error = 'Invalid user id/password'
-    return render_template('signin.html', error=error)
+    return render_template("signin.html", error=error)
 
 @app.route('/')
 def main():
-    return render_template("main.html")
+    return render_template("signin.html")
 
 @app.route('/question')
 def question():
