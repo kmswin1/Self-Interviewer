@@ -68,7 +68,14 @@ def mypage():
 def getInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
-    return 1
+    sql = "select * from Info"
+    curs.execute(sql)
+    conn.commit()
+    results = curs.fetchall()
+    jsonObj = json.dumps(results)
+    print ("getInfo success")
+    conn.close()
+    return jsonObj
 
 @app.route('/writeInfo', methods=['POST'])
 def writeInfo():
