@@ -119,10 +119,8 @@ def clickInfo():
     print (jsonObj)
     sql = "select hit from Info where id = %s"
     curs.execute(sql, (jsonObj["id"]))
-    selected_hit = curs.fetchone()
-    selected_hit = selected_hit + 1
     sql = "update Info set hit = %s where id = %s"
-    curs.execute(sql, (selected_hit, jsonObj["id"]))
+    curs.execute(sql, (jsonObj["sview"], jsonObj["id"]))
     id = jsonObj["id"]
     conn.commit()
     print ("clickInfo success")
