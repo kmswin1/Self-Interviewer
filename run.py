@@ -74,6 +74,10 @@ def index():
 def mypage():
     return render_template("mypage.html")
 
+@app.route('/post/<id>')
+def post(id):
+    return render_template("post.html", id=id)
+
 @app.route('/getInfo', methods=['GET'])
 def getInfo():
     conn = getConnection()
@@ -113,14 +117,11 @@ def clickInfo():
     selected_hit = curs.fetchone()
     sql = "update Info set hit = %s where id = %s"
     curs.execute(sql, (selected_hit, jsonObj["id"]))
-    sql = "select * from Info where id = %s"
-    curs.execute(sql, (jsonObj["id"]))
-    results = curs.fetchone()
-    jsonObj = json.dumps(results)
+    id = jsonObj["id"]
     conn.commit()
     print ("clickInfo success")
     conn.close()
-    return jsonObj
+    return post(id)
 
 
 @app.route('/reviseInfo', methods=['PUT'])
