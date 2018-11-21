@@ -89,7 +89,7 @@ def getPostInfo():
     results = curs.fetchone()
     jsonObj = json.dumps(results)
     conn.commit()
-    print ("clickInfo success")
+    print ("getPostInfo success")
     conn.close()
     return jsonObj
 
