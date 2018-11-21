@@ -101,6 +101,27 @@ def writeInfo():
     conn.close()
     return redirect(url_for('community'))
 
+@app.route('/clickInfo', methods=['PUT'])
+def clickInfo():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+
+    print (jsonObj)
+    sql = "select hit from Info where id = %s"
+    curs.execute(sql, (jsonObj["id"]))
+    selected_hit = curs.fetchone()
+    sql = "update Info set hit = %s where id = %s"
+    curs.execute(sql, (selected_hit, jsonObj["id"]))
+    sql = "select * from Info where id = %s"
+    curs.execute(sql, (jsonObj["id"]))
+    results = curs.fetchone()
+    jsonObj = json.dumps(results)
+    conn.commit()
+    print ("clickInfo success")
+    conn.close()
+    return jsonObj
+
 
 @app.route('/reviseInfo', methods=['PUT'])
 def reviseInfo():
