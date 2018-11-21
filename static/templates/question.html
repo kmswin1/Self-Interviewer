@@ -12,10 +12,10 @@
     <title>Contact - Business Casual - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../css/business-casual.css" rel="stylesheet">
+    <link href="css/business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -31,7 +31,7 @@
 </head>
 
 <body>
-  <a div class="brand" href="index.html">InterviewNet</a>
+  <a div class="brand" href="index.html">Interviewee</a>
   <div class="address-bar">소프트웨어 팀프로젝트 1팀</div>
 
     <!-- Navigation -->
@@ -90,162 +90,174 @@
                     <hr>
                     <form role="form">
                         <div id="content" class="row">
-                           <div class="form-group col-lg-4">
-                           </div>
-                           <div class="form-group col-lg-4">
+                        	<div class="form-group col-lg-4">
+                        	</div>
+                        	<div id="content_body"class="form-group col-lg-4">
                                 <label>직종을 선택해주세요.</label>
                                 <select id="occupation" class="form-control" onchange="setOption()">
                                     <option>직종 선택</option>
-                                    <option value="01">경영·사무</option>
-                                    <option value="02">영업·고객상담</option>
-                                    <option value="03">생산·제조</option>
-                                    <option value="04">IT·인터넷</option>
-                                    <option value="05">전문직</option>
-                                    <option value="06">교육</option>
-                                    <option value="07">미디어</option>
-                                    <option value="08">특수계층·공공</option>
-                                    <option value="09">건설</option>
-                                    <option value="10">유통·무역</option>
-                                    <option value="11">서비스</option>
-                                    <option value="12">디자인</option>
-                                    <option value="13">의료</option>
+                                    <option value="경영/사무">경영·사무</option>
+                                    <option value="영업/고객상담">영업·고객상담</option>
+                                    <option value="생산/제조">생산·제조</option>
+                                    <option value="IT/인터넷">IT·인터넷</option>
+                                    <option value="전문직">전문직</option>
+                                    <option value="교육">교육</option>
+                                    <option value="미디어">미디어</option>
+                                    <option value="특수계층/공공">특수계층·공공</option>
+                                    <option value="건설">건설</option>
+                                    <option value="유통/무역">유통·무역</option>
+                                    <option value="서비스">서비스</option>
+                                    <option value="디자인">디자인</option>
+                                    <option value="의료">의료</option>
                                 </select>
                                 <br>
                                 <label>기업을 선택해주세요.</label>
                                 <select id="company" class="form-control">
                                     <option>기업 선택</option>
-                                    <!-- if (document.getElementById("occupation").value == "01" -->
-                                    <script>
-                                        function setOption() {
-                                            var oc = document.getElementById("occupation").value;
-                                            var compItem;
-
-                                            var companyArray_1 = ["버거킹", "신세계", "벽산", "인터파크"];
-                                            var companyArray_2 = ["KCC", "코오롱 모터스", "비상교육", "BBQ"];
-                                            var companyArray_3 = ["SK텔레콤", "에스트라", "휴온스글로벌", "태평양물산", "테라핀테크"];
-                                            var companyArray_4 = ["기아자동차", "LG하우시스", "신한DS", "신세계 아이앤씨"];
-                                            var companyArray_5 = ["한영회계법인", "KB증권", "DB금융투자", "한국환경공단"];
-                                            var companyArray_6 = ["비상교육", "메가스터디", "이투스", "해커스어학원"];
-                                            var companyArray_7 = ["KBS", "SBS", "MBC", "JTBC", "tvN", "NS홈쇼핑"];
-                                            var companyArray_8 = ["한국전력공사"];
-                                            var companyArray_9 = ["대우건설", "벽산", "푸르지오", "참존건설"];
-                                            var companyArray_10 = ["쿠팡", "티몬", "위메프", "STX", "태평양물산"];
-                                            var companyArray_11 = ["카라쉬관광호텔", "SR호텔", "KFC코리아", "다이닝코리아"];
-                                            var companyArray_12 = ["네오아트비젼", "CTTD", "프라임인쇄"];
-                                            var companyArray_13 = ["세브란스병원", "가톨릭병원", "성모병원", "길병원"];
-
-                                            switch(oc) {
-                                                case "01":
-                                                    compItem = companyArray_1;
-                                                    break;
-                                                case "02":
-                                                    compItem = companyArray_2;
-                                                    break;
-                                                case "03":
-                                                    compItem = companyArray_3;
-                                                    break;
-                                                case "04":
-                                                    compItem = companyArray_4;
-                                                    break;
-                                                case "05":
-                                                    compItem = companyArray_5;
-                                                    break;
-                                                case "06":
-                                                    compItem = companyArray_6;
-                                                    break;
-                                                case "07":
-                                                    compItem = companyArray_7;
-                                                    break;
-                                                case "08":
-                                                    compItem = companyArray_8;
-                                                    break;
-                                                case "09":
-                                                    compItem = companyArray_9;
-                                                    break;
-                                                case "10":
-                                                    compItem = companyArray_10;
-                                                    break;
-                                                case "11":
-                                                    compItem = companyArray_11;
-                                                    break;
-                                                case "12":
-                                                    compItem = companyArray_12;
-                                                    break;
-                                                case "13":
-                                                    compItem = companyArray_13;
-                                                    break;
-                                                default:
-                                                    compItem = ["default"];
-                                                    break;
-
-                                            }
-                                            document.getElementById("company").innerHTML = "<select id=\"company\" class=\"form-control\">"
-                                            for (var i = 0; i < compItem.length; i++) {
-                                                var option = document.createElement("option");
-                                                option.innerHTML = "<option value=\"" + compItem[i] + "\"> " + compItem[i] + "</option>";
-                                                /*
-                                                var option = "<option" + compItem[i] + "</option>";
-                                                */
-                                                document.getElementById("company").appendChild(option);
-                                            }
-                                        }
-                                        /*
-                                        var oc = document.getElementById("occupation").value;
-                                        switch(oc) {
-                                            case "01":
-                                        }*/
-                                        </script>
-                                    <!--
-                                    <option value="01" style='display:false'>삼성</option>
-                                    <option value="02">현대자동차</option>
-                                    <option value="03">현대중공업</option>
-                                    <option value="04">SK</option>
-                                    <option value="05">LG</option>
-                                    <option value="06">롯데</option>
-                                    <option value="07">포스코</option>
-                                    <option value="08">GS</option>
-                                    <option value="09">한화</option>
-                                    <option value="10">농협</option>
-                                    <option value="11">신세계</option>
-                                    <option value="12">KT</option>
-                                    <option value="13">두산</option>
-                                    <option value="14">한진</option>
-                                    <option value="15">CJ</option>
-                                    <option value="16">부영</option>
-                                    <option value="17">LS</option>
-                                    <option value="18">대림</option>
-                                    <option value="19">금호아시아나</option>
-                                    <option value="20">대우조선해양</option>
-                                    <option value="21">미래에셋</option>
-                                    <option value="22">S-Oil</option>
-                                    <option value="23">현대백화점</option>
-                                    <option value="24">OCI</option>
-                                    <option value="25">효성</option>
-                                    <option value="26">영풍</option>
-                                    <option value="27">KT&G</option>
-                                    <option value="28">한국투자금융</option>
-                                    <option value="29">대우건설</option>
-                                    <option value="30">하림</option>
-                                    <option value="31">KCC</option>
-                                -->
                                 </select>
 
                                 <br><br><center>
                                 <input type="hidden" name="save" value="contact">
-                                <button id="submit_btn" type="button" onclick="sendInfo()" class="btn btn-default">질문 보기</button></center>
+                                <button id="submit_btn" type="button" onclick="sendSelectValue()" class="btn btn-default">질문 보기</button></center>
 
                                 <script type="text/javascript">
-                                    function sendInfo() {
-                                        var xhttp = new XMLHttpRequest();
-                                        xhttp.onreadystatechange = function() {
-                                            if (this.readyState == 4 && this.status == 200) {
-                                                document.getElementById("content").innerHTML = this.responseText;
-                                            }
-                                        };
-                                        xhttp.open("GET", "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/", true);
-                                        //xhttp.open("GET", "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/", true);
-                                        xhttp.send();
+                                function sendInfo() {
+                                    var xhttp = new XMLHttpRequest();
+                                    var occupation = document.getElementById("occupation").value;
+                                    var company = document.getElementById("company").value;
+                                    xhttp.onreadystatechange = function() {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                          console.log(this.responseText);
+                                          document.getElementById("content_body").innerHTML = this.responseText;
+                                        }
+                                    };
+                                    var occu_value = $("#occupation").val();
+                                  	var comp_value = $("#company").val();
+
+                                  	json_data = JSON.stringify({
+                                  		occupation : occu_value,
+                                  		company : comp_value,
+                                  	});
+                                    console.log(json_data);
+
+
+                                    var url = "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/question";
+                                    xhttp.open("GET", url, true);
+                                    //xhttp.open("GET", "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/", true);
+                                    xhttp.send();
+                                }
+
+                                function sendSelectValue() {
+                                  	var occu_value = $("#occupation").val();
+                                  	var comp_value = $("#company").val();
+
+                                  	json_data = JSON.stringify({
+                                  		occupation : occu_value,
+                                  		company : comp_value,
+                                  	});
+                                    //console.log(json_data);
+                                  	$.ajax({
+                                  		type: 'POST',
+                                  		url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/sendQuestionOption",
+                                  		contentType: 'application/json; charset=utf-8',
+                                  		traditional: true,
+                                  		async: false,
+                                  		data: json_data,
+                                  		success: function(data) {
+                                  			console.log(data);
+                                  		},
+                                  		error: function(xhr) {
+                                  			console.log("senderror data : " + data);
+                                  		}
+                                  	});
+                                    console.log(json_data);
+
+                                    $.ajax({
+                                      type: 'POST',
+                                      url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/sendQuestionOption"
+                                      contentType: 'application/json; charset=utf-8',
+                                      traditional: true,
+                                      async: false,
+                                      data: jsonArray,
+                                      success: function (data) {
+                                          console.log(data);
+                                          jsonArray = JSON.parse(data)
+                                          select = jsonArray;
+                                      },
+                                      error: function (xhr) {
+                                          console.log ("실패");
+                                      }
+                                  });
+                                }
+
+                                function setOption() {
+                                    var oc = document.getElementById("occupation").value;
+                                    var compItem;
+                                    var companyArray_1 = ["버거킹", "신세계", "벽산", "인터파크"];
+                                    var companyArray_2 = ["KCC", "코오롱 모터스", "비상교육", "BBQ"];
+                                    var companyArray_3 = ["SK텔레콤", "에스트라", "휴온스글로벌", "태평양물산", "테라핀테크"];
+                                    var companyArray_4 = ["기아자동차", "LG하우시스", "신한DS", "신세계 아이앤씨"];
+                                    var companyArray_5 = ["한영회계법인", "KB증권", "DB금융투자", "한국환경공단"];
+                                    var companyArray_6 = ["비상교육", "메가스터디", "이투스", "해커스어학원"];
+                                    var companyArray_7 = ["KBS", "SBS", "MBC", "JTBC", "tvN", "NS홈쇼핑"];
+                                    var companyArray_8 = ["한국전력공사"];
+                                    var companyArray_9 = ["대우건설", "벽산", "푸르지오", "참존건설"];
+                                    var companyArray_10 = ["쿠팡", "티몬", "위메프", "STX", "태평양물산"];
+                                    var companyArray_11 = ["카라쉬관광호텔", "SR호텔", "KFC코리아", "다이닝코리아"];
+                                    var companyArray_12 = ["네오아트비젼", "CTTD", "프라임인쇄"];
+                                    var companyArray_13 = ["세브란스병원", "가톨릭병원", "성모병원", "길병원"];
+
+                                    switch(oc) {
+                                        case "경영/사무":
+                                            compItem = companyArray_1;
+                                            break;
+                                        case "영업/고객상담":
+                                            compItem = companyArray_2;
+                                            break;
+                                        case "생산/제조":
+                                            compItem = companyArray_3;
+                                            break;
+                                        case "IT/인터넷":
+                                            compItem = companyArray_4;
+                                            break;
+                                        case "전문직":
+                                            compItem = companyArray_5;
+                                            break;
+                                        case "교육":
+                                            compItem = companyArray_6;
+                                            break;
+                                        case "미디어":
+                                            compItem = companyArray_7;
+                                            break;
+                                        case "특수계층/공공":
+                                            compItem = companyArray_8;
+                                            break;
+                                        case "건설":
+                                            compItem = companyArray_9;
+                                            break;
+                                        case "유통/무역":
+                                            compItem = companyArray_10;
+                                            break;
+                                        case "서비스":
+                                            compItem = companyArray_11;
+                                            break;
+                                        case "디자인":
+                                            compItem = companyArray_12;
+                                            break;
+                                        case "의료":
+                                            compItem = companyArray_13;
+                                            break;
+                                        default:
+                                            compItem = ["default"];
+                                            break;
                                     }
+                                    document.getElementById("company").innerHTML = "<select id=\"company\" class=\"form-control\">"
+                                    for (var i = 0; i < compItem.length; i++) {
+                                        var option = document.createElement("option");
+                                        option.innerHTML = "<option value=\"" + compItem[i] + "\"> " + compItem[i] + "</option>";
+                                        document.getElementById("company").appendChild(option);
+                                    }
+                                }
                                 </script>
                             </div>
                         </div>
@@ -268,10 +280,10 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 
