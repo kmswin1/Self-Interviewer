@@ -3,15 +3,7 @@ var jsonArray;
 var select;
 var idx;
 var hitupdate;
-targetpost = '';
-window.greeting = "Hello World!"
-function foo() {
-
-   alert(greeting); // Hello World!
-   alert(window["greeting"]); // Hello World!
-   alert(window.greeting); // Hello World! (recommended)
-
-}
+var targetpost;
 
 $.ajax({
           type: 'GET',
@@ -37,13 +29,8 @@ $('table').click(function(e) {
           //console.log(e.target);
           var a = $("table td").index($(e.target));
           select[a]['hit'] += 1;
-          hitupdate = select;
           var json_data = JSON.stringify({
-                        /*author : select[a]['author'],
-                        title : select[a]['title'],
-                        text : select[a]['text'],
-                        hit : select[a]['hit'],
-                        time : select[a]['time'],*/
+                        id : select[a]['id'],
                         sid : select[a]['author'],
                         stitle : select[a]['title'],
                         stext : select[a]['text'],
@@ -51,11 +38,11 @@ $('table').click(function(e) {
                         stime : select[a]['time'],
                       })
           targetpost = json_data;
-          alert(json_data);
+          alert(targetpost);
 
           $.ajax({
-                    type: 'POST',
-                    url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/writeInfo",
+                    type: 'PUT',
+                    url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/clickInfo",
                     contentType: 'application/json; charset=utf-8',
                     traditional: true,
                     async: false,
@@ -83,7 +70,7 @@ for(j=1;j<=page;j++){
   myHTMLBtn += '<input type="button" class="btn-link btn-sm" id = btn'+ j +' onClick = paging(' + j + ') value = "<'+ j +'>" </button>'
 }
 
-var btn = document.getElementById('pageselect')
+var btn = document.getElementById('pageselect');
 btn.innerHTML = myHTMLBtn;
 
 
