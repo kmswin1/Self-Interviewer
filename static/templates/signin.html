@@ -104,7 +104,12 @@
                                 <label>닉네임</label>
                                 <input type="text" id="nickname" name="nickname" title="닉네임" class="form-control" maxlength="20">
                                 <label>이름</label>
-                                <input type="text" id="name" name="name" title="이름" class="form-control" maxlength="40">
+                                <input type="text" id="sname" name="name" title="이름" class="form-control" maxlength="40">
+
+                                <label>대학교를 선택해주세요.</label>
+                                <select id="college_list" name="selectcollege" class="form-control">
+
+                                    </select>
 
                                 <label>생년월일</label>
                                 <div>
@@ -134,14 +139,14 @@
                                 </div>
                                 <label>성별</label>
                                 <select id="gender" name="gender" class="form-control">
-                                	<option value="0">남</option>
-                                	<option value="1">여</option>
+                                	<option value="남">남</option>
+                                	<option value="여">여</option>
                                 </select>
                                 <label>이메일</label>
                                 <input type="email" id="emailaddress" name="emailaddress" placeholder="example@gmail.com" class="form-control">
                                 <br><br><center>
                                 <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">가입하기</button></center>
+                                <button type="button" class="btn btn-default" onClick="signup()">가입하기</button></center>
                             </div>
                         </div>
                     </form>
@@ -164,7 +169,7 @@
 
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>
-
+    <script src="../js/signin.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
 

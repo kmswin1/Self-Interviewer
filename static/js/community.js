@@ -1,7 +1,17 @@
 var data;
 var jsonArray;
+var select;
 var idx;
+var hitupdate;
+targetpost = '';
+window.greeting = "Hello World!"
+function foo() {
 
+   alert(greeting); // Hello World!
+   alert(window["greeting"]); // Hello World!
+   alert(window.greeting); // Hello World! (recommended)
+
+}
 
 $.ajax({
           type: 'GET',
@@ -13,6 +23,7 @@ $.ajax({
           success: function (data) {
               //console.log(data);
               jsonArray = JSON.parse(data)
+              select = jsonArray;
           },
           error: function (xhr) {
               console.log ("실패");
@@ -20,28 +31,29 @@ $.ajax({
       });
 //console.log(jsonArray[1]);
 
-
-
-
 $('table').click(function(e) {
     if(e.target.tagName == "TD") {
         if($("table td:lt(" + (idx + 1) + ")")){
           //console.log(e.target);
           var a = $("table td").index($(e.target));
-          //console.log(jsonArray[a]);
-
-
+          select[a]['hit'] += 1;
+          hitupdate = select;
           var json_data = JSON.stringify({
-                        author : sid,
-                        title : stitle,
-                        text : stext,
-                        hit : sview,
-                        time : stime,
+                        /*author : select[a]['author'],
+                        title : select[a]['title'],
+                        text : select[a]['text'],
+                        hit : select[a]['hit'],
+                        time : select[a]['time'],*/
+                        sid : select[a]['author'],
+                        stitle : select[a]['title'],
+                        stext : select[a]['text'],
+                        sview : select[a]['hit'],
+                        stime : select[a]['time'],
                       })
+          targetpost = json_data;
+          alert(json_data);
 
-          console.log("실패");
-
-        /*  $.ajax({
+          $.ajax({
                     type: 'POST',
                     url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/writeInfo",
                     contentType: 'application/json; charset=utf-8',
@@ -54,22 +66,12 @@ $('table').click(function(e) {
                     error: function (xhr) {
                         console.log ("2");
                     }
-                });*/
-
-
-
-
-
-
-
-
-
+                });
           location.href="post.html"
         }
         //location.href="post.html"
     }
 });
-
 
 //게시글 수에 따라 버튼수 늘어남
 var page = Math.ceil((jsonArray.length)/10);
