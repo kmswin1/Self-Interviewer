@@ -80,6 +80,7 @@ def post(id):
 
 @app.route('/getPostInfo')
 def getPostInfo():
+    return 1
 
 
 @app.route('/getInfo', methods=['GET'])
