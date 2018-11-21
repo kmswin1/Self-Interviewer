@@ -78,9 +78,20 @@ def mypage():
 def post(id):
     return render_template("post.html", id=id)
 
-@app.route('/getPostInfo')
+@app.route('/getPostInfo', methods=['GET'])
 def getPostInfo():
-    return 1
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+
+    sql = "select * from Info where id = %s"
+    curs.execute(sql, (jsonObj["id"]))
+    results = curs.fetchone()
+    jsonObj = json.dumps(results)
+    conn.commit()
+    print ("clickInfo success")
+    conn.close()
+    return jsonObj
 
 
 @app.route('/getInfo', methods=['GET'])
