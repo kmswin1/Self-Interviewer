@@ -211,13 +211,13 @@ def sendEmail():
     smtp.ehlo()  # say Hello
     smtp.starttls()  # TLS 사용시 필요
     collegeMail = ''
-    mailId = ''
+    id = ''
     smtp.login('kmswin7@gmail.com', 'qhdwka12')
 
     msg = MIMEText('본문 테스트 메시지')
     msg['Subject'] = '테스트'
-    msg['To'] = mailId+'@'+collegeMail
-    smtp.sendmail('kmswin7@gmail.com', mailId+'@'+collegeMail , msg.as_string())
+    msg['To'] = id+'@'+collegeMail
+    smtp.sendmail('kmswin7@gmail.com', id+'@'+collegeMail , msg.as_string())
 
     smtp.quit()
 
