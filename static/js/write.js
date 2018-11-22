@@ -3,8 +3,6 @@ var json_data;
 
 function send(){
   var nowDate = new Date();
-  console.log(nowDate);
-
   var sample = $("#stitle").val();
   var stext = $("#stext").val();
   var sid = "sampleid";

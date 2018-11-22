@@ -190,3 +190,13 @@ footer p {
         clear: both;
     }
 }
+
+#pageselect {
+	list-style: none;
+	text-align: center;
+  color: black;
+}
+
+#btn1 {
+	//color: black;
+}
