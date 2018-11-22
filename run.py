@@ -4,6 +4,8 @@ from flask_cors import CORS
 import json
 import pymysql
 import os
+import smtplib
+from email.mime.text import MIMEText
 
 PWD = os.path.dirname(os.path.realpath(__file__))
 app = Flask(__name__, template_folder="static/templates", static_folder="static")
@@ -171,6 +173,23 @@ def delInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
     return 1
+
+@app.route('/sendEmail', methods=['POST'])
+def sendEmail():
+    smtp = smtplib.SMTP('smtp.live.com', 587)
+    smtp.ehlo()  # say Hello
+    smtp.starttls()  # TLS 사용시 필요
+    collegeMail = '';
+    id = '';
+    smtp.login('kmswin7@gmail.com', 'qhdwka12')
+
+    msg = MIMEText('본문 테스트 메시지')
+    msg['Subject'] = '테스트'
+    msg['To'] = id+'@'+collegeMail
+    smtp.sendmail('kmswin7@gmail.com', id+'@'+collegeMail , msg.as_string())
+
+    smtp.quit()
+
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
