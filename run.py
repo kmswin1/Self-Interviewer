@@ -59,7 +59,7 @@ def getQuestion():
     sql = "SELECT * FROM Question WHERE major=%s and company=%s"
     curs.execute(sql, (jsonObj["occupation"], jsonObj["company"]))
     results = {}
-    results = curs.fetchone()
+    results = curs.fetchall()
     jsonObj = json.dumps(results)
     conn.commit()
     print (jsonObj)
@@ -75,6 +75,22 @@ def question():
 @app.route('/matching')
 def matching():
     return render_template("matching.html")
+
+@app.route('/getMemberInfo', methods=['PUT'])
+def getMemberInfo():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    print (jsonObj)
+    sql = "select * from Member where company = %s and city = %s and town = %s and major = %s"
+    curs.execute(sql,(jsonObj["company"], jsonObj["city"], jsonObj["town"], jsonObj["major"]))
+    results = curs.fetchall()
+    jsonObj = json.dumps(results)
+    conn.commit()
+    print (jsonObj)
+    print ("getMemberInfo success")
+    conn.close()
+    return jsonObj
 
 @app.route('/studyroom')
 def studyroom():
@@ -122,9 +138,9 @@ def getInfo():
     curs = conn.cursor(pymysql.cursors.DictCursor)
     sql = "select * from Info order by id desc"
     curs.execute(sql)
-    conn.commit()
     results = curs.fetchall()
     jsonObj = json.dumps(results)
+    conn.commit()
     print (jsonObj)
     print ("getInfo success")
     conn.close()
@@ -159,7 +175,7 @@ def clickInfo():
     conn.commit()
     print ("clickInfo success")
     conn.close()
-    return post(id)
+    return jsonObj
 
 
 @app.route('/reviseInfo', methods=['PUT'])
