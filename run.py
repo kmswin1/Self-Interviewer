@@ -212,7 +212,7 @@ def sendEmail():
     smtp.starttls()  # TLS 사용시 필요
     collegeMail = ''
     id = ''
-    smtp.login('kmswin7@gmail.com', 'qhdwka12')
+    smtp.login('kmswin7@gmail.com', '1234')
 
     msg = MIMEText('본문 테스트 메시지')
     msg['Subject'] = '테스트'
