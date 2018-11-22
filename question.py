@@ -1,3 +1,14 @@
+from flask import Flask
+from flask import render_template, request, redirect, url_for
+from flask_cors import CORS
+import json
+import pymysql
+import os
+
+PWD = os.path.dirname(os.path.realpath(__file__))
+app = Flask(__name__, template_folder="static/templates", static_folder="static")
+
+
 @app.route('/sendQuestionOption', methods=['POST'])
 def getQuestion():
     conn = getConnection()
