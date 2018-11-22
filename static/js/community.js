@@ -24,33 +24,35 @@ $.ajax({
 //console.log(jsonArray[1]);
 $('table').click(function(e) {
     if(e.target.tagName == "TD") {
-        if($("table td:lt(" + (idx + 1) + ")")){
-          //console.log(e.target);
-          var a = $("table td").index($(e.target));
-          select[a]['hit'] += 1;
-          var json_data = JSON.stringify({
-                        id : select[a]['id'],
-                        sid : select[a]['author'],
-                        stitle : select[a]['title'],
-                        stext : select[a]['text'],
-                        sview : select[a]['hit'],
-                        stime : select[a]['time'],
-                      });
+        if ($("table td:lt(" + (idx + 1) + ")")) {
+            //console.log(e.target);
+            var a = $("table td").index($(e.target));
+            select[a]['hit'] += 1;
+            var json_data = JSON.stringify({
+                id: select[a]['id'],
+                sid: select[a]['author'],
+                stitle: select[a]['title'],
+                stext: select[a]['text'],
+                sview: select[a]['hit'],
+                stime: select[a]['time'],
+            });
 
 
-          $.ajax({
-                    type: 'PUT',
-                    url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/clickInfo",
-                    contentType: 'application/json; charset=utf-8',
-                    traditional: true,
-                    async: false,
-                    data: json_data,
-                    success: function (data) {
-                        console.log("1");
-                    },
-                    error: function (xhr) {
-                        console.log ("2");
-                    }
+            $.ajax({
+                type: 'PUT',
+                url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/clickInfo",
+                contentType: 'application/json; charset=utf-8',
+                traditional: true,
+                async: false,
+                data: json_data,
+                success: function (data) {
+                    console.log("1");
+                },
+                error: function (xhr) {
+                    console.log("2");
+                }
+            })
+            location.href = "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/post"
         }
     }
 });
