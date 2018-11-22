@@ -129,7 +129,7 @@ def mypage():
 def post():
     return render_template("post.html")
 
-@app.route('/getPostInfo', methods=['GET'])
+@app.route('/getPostInfo', methods=['PUT'])
 def getPostInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)

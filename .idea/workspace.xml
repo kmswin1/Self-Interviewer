@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6979421d-a8a2-4e7a-8a89-9ecf080ef967" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,14 +53,14 @@
         <counts>
           <entry key="HTML" value="1235" />
           <entry key="JavaScript" value="128" />
-          <entry key="Python" value="2706" />
+          <entry key="Python" value="2718" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="1235" />
           <entry key="js" value="128" />
-          <entry key="py" value="2706" />
+          <entry key="py" value="2718" />
         </counts>
       </usages-collector>
     </session>
@@ -89,13 +88,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1259">
-              <caret line="190" column="33" selection-start-line="190" selection-start-column="33" selection-end-line="190" selection-end-column="33" />
+            <state relative-caret-position="310">
+              <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1542892490665" expanded="true" signature="5406:5409" ph="..." />
-                <marker date="1542892490665" expanded="true" signature="5771:6154" ph="..." />
-                <marker date="1542892490665" expanded="true" signature="6152:6154" ph="..." />
+                <marker date="1542893249483" expanded="true" signature="5398:5401" ph="..." />
+                <marker date="1542893249483" expanded="true" signature="5763:6146" ph="..." />
+                <marker date="1542893249483" expanded="true" signature="6144:6146" ph="..." />
               </folding>
             </state>
           </provider>
@@ -326,7 +325,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3015873" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -489,13 +487,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1259">
-          <caret line="190" column="33" selection-start-line="190" selection-start-column="33" selection-end-line="190" selection-end-column="33" />
+        <state relative-caret-position="310">
+          <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1542892490665" expanded="true" signature="5406:5409" ph="..." />
-            <marker date="1542892490665" expanded="true" signature="5771:6154" ph="..." />
-            <marker date="1542892490665" expanded="true" signature="6152:6154" ph="..." />
+            <marker date="1542893249483" expanded="true" signature="5398:5401" ph="..." />
+            <marker date="1542893249483" expanded="true" signature="5763:6146" ph="..." />
+            <marker date="1542893249483" expanded="true" signature="6144:6146" ph="..." />
           </folding>
         </state>
       </provider>
