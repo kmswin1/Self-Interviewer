@@ -12,10 +12,10 @@
     <title>Contact - Business Casual - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/business-casual.css" rel="stylesheet">
+    <link href="../css/business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -92,7 +92,7 @@
                         <div id="content" class="row">
                         	<div class="form-group col-lg-4">
                         	</div>
-                        	<div id="content_body"class="form-group col-lg-4">
+                        	<div id="content_body" class="form-group col-lg-4">
                                 <label>직종을 선택해주세요.</label>
                                 <select id="occupation" class="form-control" onchange="setOption()">
                                     <option>직종 선택</option>
@@ -114,13 +114,125 @@
                                 <label>기업을 선택해주세요.</label>
                                 <select id="company" class="form-control">
                                     <option>기업 선택</option>
+                                    <script>
+                                    function setOption() {
+                                        var oc = document.getElementById("occupation").value;
+                                        var compItem;
+                                        var companyArray_1 = ["버거킹", "신세계", "벽산", "인터파크"];
+                                        var companyArray_2 = ["KCC", "코오롱 모터스", "비상교육", "BBQ"];
+                                        var companyArray_3 = ["SK텔레콤", "에스트라", "휴온스글로벌", "태평양물산", "테라핀테크"];
+                                        var companyArray_4 = ["기아자동차", "LG하우시스", "신한DS", "신세계 아이앤씨"];
+                                        var companyArray_5 = ["한영회계법인", "KB증권", "DB금융투자", "한국환경공단"];
+                                        var companyArray_6 = ["비상교육", "메가스터디", "이투스", "해커스어학원"];
+                                        var companyArray_7 = ["KBS", "SBS", "MBC", "JTBC", "tvN", "NS홈쇼핑"];
+                                        var companyArray_8 = ["한국전력공사"];
+                                        var companyArray_9 = ["대우건설", "벽산", "푸르지오", "참존건설"];
+                                        var companyArray_10 = ["쿠팡", "티몬", "위메프", "STX", "태평양물산"];
+                                        var companyArray_11 = ["카라쉬관광호텔", "SR호텔", "KFC코리아", "다이닝코리아"];
+                                        var companyArray_12 = ["네오아트비젼", "CTTD", "프라임인쇄"];
+                                        var companyArray_13 = ["세브란스병원", "가톨릭병원", "성모병원", "길병원"];
+
+                                        switch(oc) {
+                                            case "경영/사무":
+                                                compItem = companyArray_1;
+                                                break;
+                                            case "영업/고객상담":
+                                                compItem = companyArray_2;
+                                                break;
+                                            case "생산/제조":
+                                                compItem = companyArray_3;
+                                                break;
+                                            case "IT/인터넷":
+                                                compItem = companyArray_4;
+                                                break;
+                                            case "전문직":
+                                                compItem = companyArray_5;
+                                                break;
+                                            case "교육":
+                                                compItem = companyArray_6;
+                                                break;
+                                            case "미디어":
+                                                compItem = companyArray_7;
+                                                break;
+                                            case "특수계층/공공":
+                                                compItem = companyArray_8;
+                                                break;
+                                            case "건설":
+                                                compItem = companyArray_9;
+                                                break;
+                                            case "유통/무역":
+                                                compItem = companyArray_10;
+                                                break;
+                                            case "서비스":
+                                                compItem = companyArray_11;
+                                                break;
+                                            case "디자인":
+                                                compItem = companyArray_12;
+                                                break;
+                                            case "의료":
+                                                compItem = companyArray_13;
+                                                break;
+                                            default:
+                                                compItem = ["default"];
+                                                break;
+                                        }
+                                        document.getElementById("company").innerHTML = "<select id=\"company\" class=\"form-control\">"
+                                        for (var i = 0; i < compItem.length; i++) {
+                                            var option = document.createElement("option");
+                                            option.innerHTML = "<option value=\"" + compItem[i] + "\"> " + compItem[i] + "</option>";
+                                            document.getElementById("company").appendChild(option);
+                                        }
+                                    }
+                                    </script>
                                 </select>
 
                                 <br><br><center>
                                 <input type="hidden" name="save" value="contact">
                                 <button id="submit_btn" type="button" onclick="sendSelectValue()" class="btn btn-default">질문 보기</button></center>
-
+<!--
+                                <br><br>
+                                <div id="div_question">
+                                  <table id="question_table" class="table table-striped">
+                                    <thead>
+                                      <td>번호</td>
+                                      <td>직군</td>
+                                      <td>기업</td>
+                                      <td>질문내용</td>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>IT/인터넷</td>
+                                        <td>Google</td>
+                                        <td>Introduce yourself.</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div> -->
+                              </div>
+                            </div>
+                            <div id="content" class="row">
+                            	<div class="form-group col-lg-12">
+                                <table id="question_table" class="table table-striped">
+                                  <thead>
+                                    <th>번호</th>
+                                    <th>직군</th>
+                                    <th>기업</th>
+                                    <th>질문내용</th>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>IT/인터넷</td>
+                                      <td>Google</td>
+                                      <td>Introduce yourself.</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
                                 <script type="text/javascript">
+                                /*
                                 function sendInfo() {
                                     var xhttp = new XMLHttpRequest();
                                     var occupation = document.getElementById("occupation").value;
@@ -145,11 +257,15 @@
                                     xhttp.open("GET", url, true);
                                     //xhttp.open("GET", "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/", true);
                                     xhttp.send();
-                                }
+                                }*/
 
                                 function sendSelectValue() {
+                                  console.log("sendS");
                                   	var occu_value = $("#occupation").val();
                                   	var comp_value = $("#company").val();
+                                    var data;
+                                    var jsonArray;
+
 
                                   	json_data = JSON.stringify({
                                   		occupation : occu_value,
@@ -173,91 +289,33 @@
                                     console.log(json_data);
 
                                     $.ajax({
-                                      type: 'POST',
+                                      type: 'GET',
                                       url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/sendQuestionOption"
                                       contentType: 'application/json; charset=utf-8',
                                       traditional: true,
                                       async: false,
                                       data: jsonArray,
                                       success: function (data) {
-                                          console.log(data);
-                                          jsonArray = JSON.parse(data)
-                                          select = jsonArray;
+                                          //console.log(data);
+                                          jsonArray = JSON.parse(data);
+                                          console.log(jsonArray);
+                                          //select = jsonArray;
                                       },
                                       error: function (xhr) {
                                           console.log ("실패");
                                       }
                                   });
+                                  // var inner = "<thead><th>번호</th><th>직군</th><th>기업</th><th>질문내용</th></thead><tbody>"
+                                  // for jsonArray의 튜플 개수만큼
+                                  //    inner = inner+"<tr><td>"+index+"</td><td>"+jsonArray("major")
+                                  //            +"</td><td>"+jsonArray("company")+"</td><td>"
+                                  //            +jsonArray("question")+</td></tr>
+                                  // inner = inner + "</tbody>"
+
+                                  // document.getElementById("question_table").innerHTML = inner;
                                 }
 
-                                function setOption() {
-                                    var oc = document.getElementById("occupation").value;
-                                    var compItem;
-                                    var companyArray_1 = ["버거킹", "신세계", "벽산", "인터파크"];
-                                    var companyArray_2 = ["KCC", "코오롱 모터스", "비상교육", "BBQ"];
-                                    var companyArray_3 = ["SK텔레콤", "에스트라", "휴온스글로벌", "태평양물산", "테라핀테크"];
-                                    var companyArray_4 = ["기아자동차", "LG하우시스", "신한DS", "신세계 아이앤씨"];
-                                    var companyArray_5 = ["한영회계법인", "KB증권", "DB금융투자", "한국환경공단"];
-                                    var companyArray_6 = ["비상교육", "메가스터디", "이투스", "해커스어학원"];
-                                    var companyArray_7 = ["KBS", "SBS", "MBC", "JTBC", "tvN", "NS홈쇼핑"];
-                                    var companyArray_8 = ["한국전력공사"];
-                                    var companyArray_9 = ["대우건설", "벽산", "푸르지오", "참존건설"];
-                                    var companyArray_10 = ["쿠팡", "티몬", "위메프", "STX", "태평양물산"];
-                                    var companyArray_11 = ["카라쉬관광호텔", "SR호텔", "KFC코리아", "다이닝코리아"];
-                                    var companyArray_12 = ["네오아트비젼", "CTTD", "프라임인쇄"];
-                                    var companyArray_13 = ["세브란스병원", "가톨릭병원", "성모병원", "길병원"];
 
-                                    switch(oc) {
-                                        case "경영/사무":
-                                            compItem = companyArray_1;
-                                            break;
-                                        case "영업/고객상담":
-                                            compItem = companyArray_2;
-                                            break;
-                                        case "생산/제조":
-                                            compItem = companyArray_3;
-                                            break;
-                                        case "IT/인터넷":
-                                            compItem = companyArray_4;
-                                            break;
-                                        case "전문직":
-                                            compItem = companyArray_5;
-                                            break;
-                                        case "교육":
-                                            compItem = companyArray_6;
-                                            break;
-                                        case "미디어":
-                                            compItem = companyArray_7;
-                                            break;
-                                        case "특수계층/공공":
-                                            compItem = companyArray_8;
-                                            break;
-                                        case "건설":
-                                            compItem = companyArray_9;
-                                            break;
-                                        case "유통/무역":
-                                            compItem = companyArray_10;
-                                            break;
-                                        case "서비스":
-                                            compItem = companyArray_11;
-                                            break;
-                                        case "디자인":
-                                            compItem = companyArray_12;
-                                            break;
-                                        case "의료":
-                                            compItem = companyArray_13;
-                                            break;
-                                        default:
-                                            compItem = ["default"];
-                                            break;
-                                    }
-                                    document.getElementById("company").innerHTML = "<select id=\"company\" class=\"form-control\">"
-                                    for (var i = 0; i < compItem.length; i++) {
-                                        var option = document.createElement("option");
-                                        option.innerHTML = "<option value=\"" + compItem[i] + "\"> " + compItem[i] + "</option>";
-                                        document.getElementById("company").appendChild(option);
-                                    }
-                                }
                                 </script>
                             </div>
                         </div>
@@ -280,10 +338,10 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
 </body>
 
