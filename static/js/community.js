@@ -64,7 +64,7 @@ $('table').click(function(e) {
 
 
 
-          location.href="post.html"
+          location.href="http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/post"
         }
         //location.href="post.html"
     }
