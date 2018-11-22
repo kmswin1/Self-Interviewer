@@ -4,7 +4,6 @@ from flask_cors import CORS
 import json
 import pymysql
 import os
-import question
 
 PWD = os.path.dirname(os.path.realpath(__file__))
 app = Flask(__name__, template_folder="static/templates", static_folder="static")
@@ -46,6 +45,26 @@ def sign_in(userid):
 @app.route('/')
 def main():
     return render_template("signin.html")
+
+
+@app.route('/sendQuestionOption', methods = ['PUT'])
+def getQuestion():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+
+    print(jsonObj)
+    sql = "SELECT * FROM Question WHERE major=%s and company=%s"
+    curs.execute(sql, (jsonObj["occupation"], jsonObj["company"]))
+    results = {}
+    results = curs.fetchone()
+    jsonObj = json.dumps(results)
+    conn.commit()
+    print (jsonObj)
+    print("getQuestion success.")
+    conn.close()
+    return jsonObj
+
 
 @app.route('/question')
 def question():
@@ -104,6 +123,7 @@ def getInfo():
     conn.commit()
     results = curs.fetchall()
     jsonObj = json.dumps(results)
+    print (jsonObj)
     print ("getInfo success")
     conn.close()
     return jsonObj
