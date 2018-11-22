@@ -92,6 +92,19 @@ def getMemberInfo():
     conn.close()
     return jsonObj
 
+@app.route('/setMember', methods=['POST'])
+def getMemberInfo():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    print (jsonObj)
+    sql = "insert into Matching(username, city, town, company, major, userInfo) values(%s, %s, %s, %s, %s, %s)"
+    curs.execute(sql,(jsonObj["username"], jsonObj["city"], jsonObj["town"], jsonObj["company"], jsonObj["major"], jsonObj["userInfo"]))
+    conn.commit()
+    print ("getMemberInfo success")
+    conn.close()
+    return redirect(url_for('matching'))
+
 @app.route('/studyroom')
 def studyroom():
     return render_template("studyroom.html")
@@ -112,9 +125,9 @@ def index():
 def mypage():
     return render_template("mypage.html")
 
-@app.route('/post/<id>')
-def post(id):
-    return render_template("post.html", id=id)
+@app.route('/post')
+def post():
+    return render_template("post.html")
 
 @app.route('/getPostInfo', methods=['GET'])
 def getPostInfo():
@@ -175,7 +188,7 @@ def clickInfo():
     conn.commit()
     print ("clickInfo success")
     conn.close()
-    return jsonObj
+    return redirect(url_for('post'))
 
 
 @app.route('/reviseInfo', methods=['PUT'])
@@ -195,8 +208,8 @@ def sendEmail():
     smtp = smtplib.SMTP('smtp.live.com', 587)
     smtp.ehlo()  # say Hello
     smtp.starttls()  # TLS 사용시 필요
-    collegeMail = '';
-    id = '';
+    collegeMail = ''
+    id = ''
     smtp.login('kmswin7@gmail.com', 'qhdwka12')
 
     msg = MIMEText('본문 테스트 메시지')
