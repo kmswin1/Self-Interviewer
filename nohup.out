@@ -14,3 +14,7 @@
 163.152.3.132 - - [22/Nov/2018 06:07:27] "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 -
 163.152.3.132 - - [22/Nov/2018 06:07:33] "POST /sendQuestionOption HTTP/1.1" 404 -
 163.152.3.132 - - [22/Nov/2018 06:07:33] "GET /sendQuestionOption HTTP/1.1" 404 -
+ * Detected change in '/home/ubuntu/InterviewNet/question.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 233-701-142
