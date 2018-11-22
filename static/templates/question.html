@@ -173,7 +173,7 @@
                                                 compItem = companyArray_13;
                                                 break;
                                             default:
-                                                compItem = ["default"];
+                                                compItem = ["기업 선택"];
                                                 break;
                                         }
                                         document.getElementById("company").innerHTML = "<select id=\"company\" class=\"form-control\">"
@@ -189,45 +189,14 @@
                                 <br><br><center>
                                 <input type="hidden" name="save" value="contact">
                                 <button id="submit_btn" type="button" onclick="sendSelectValue()" class="btn btn-default">질문 보기</button></center>
-<!--
                                 <br><br>
-                                <div id="div_question">
-                                  <table id="question_table" class="table table-striped">
-                                    <thead>
-                                      <td>번호</td>
-                                      <td>직군</td>
-                                      <td>기업</td>
-                                      <td>질문내용</td>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>1</td>
-                                        <td>IT/인터넷</td>
-                                        <td>Google</td>
-                                        <td>Introduce yourself.</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div> -->
+
                               </div>
                             </div>
                             <div id="content" class="row">
                             	<div class="form-group col-lg-12">
                                 <table id="question_table" class="table table-striped">
-                                  <thead>
-                                    <th>번호</th>
-                                    <th>직군</th>
-                                    <th>기업</th>
-                                    <th>질문내용</th>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>1</td>
-                                      <td>IT/인터넷</td>
-                                      <td>Google</td>
-                                      <td>Introduce yourself.</td>
-                                    </tr>
-                                  </tbody>
+
                                 </table>
                               </div>
                             </div>
@@ -237,12 +206,7 @@
                                     var xhttp = new XMLHttpRequest();
                                     var occupation = document.getElementById("occupation").value;
                                     var company = document.getElementById("company").value;
-                                    xhttp.onreadystatechange = function() {
-                                        if (this.readyState == 4 && this.status == 200) {
-                                          console.log(this.responseText);
-                                          document.getElementById("content_body").innerHTML = this.responseText;
-                                        }
-                                    };
+
                                     var occu_value = $("#occupation").val();
                                   	var comp_value = $("#company").val();
 
@@ -251,71 +215,63 @@
                                   		company : comp_value,
                                   	});
                                     console.log(json_data);
-
-
-                                    var url = "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/question";
-                                    xhttp.open("GET", url, true);
-                                    //xhttp.open("GET", "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/", true);
-                                    xhttp.send();
+                                    var url = "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/sendQuestionOption";
+                                    xhttp.open("POST", url, true);
+                                    xhttp.setRequestHeader('Content-Type', 'application/json');
+                                    xhttp.send(json_data);
+                                    xhttp.onreadystatechange = function() {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                          console.log(this.responseText);
+                                          //document.getElementById("content_body").innerHTML = this.responseText;
+                                        }
+                                    };
                                 }*/
 
                                 function sendSelectValue() {
-                                  console.log("sendS");
                                   	var occu_value = $("#occupation").val();
                                   	var comp_value = $("#company").val();
                                     var data;
                                     var jsonArray;
 
+                                    if (occu_value == "직종 선택" || comp_value == "기업 선택") {
+                                      document.getElementById("question_table").innerHTML = "<p><center>직종 및 기업을 선택하세요.</center></p>";
+                                      return ;
+                                    }
 
-                                  	json_data = JSON.stringify({
+                                  	var json_data = JSON.stringify({
                                   		occupation : occu_value,
                                   		company : comp_value,
                                   	});
-                                    //console.log(json_data);
+
+                                    console.log(json_data);
                                   	$.ajax({
-                                  		type: 'POST',
+                                  		type: 'PUT',
                                   		url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/sendQuestionOption",
                                   		contentType: 'application/json; charset=utf-8',
                                   		traditional: true,
                                   		async: false,
                                   		data: json_data,
                                   		success: function(data) {
-                                  			console.log(data);
-                                  		},
+                                        var results = JSON.parse(data);
+                                        jsonArray = results;
+                                  			//console.log("sendsucc data : " + data);
+                                        },
                                   		error: function(xhr) {
-                                  			console.log("senderror data : " + data);
+                                  			console.log("Fail to send.");
                                   		}
                                   	});
-                                    console.log(json_data);
 
-                                    $.ajax({
-                                      type: 'GET',
-                                      url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/sendQuestionOption"
-                                      contentType: 'application/json; charset=utf-8',
-                                      traditional: true,
-                                      async: false,
-                                      data: jsonArray,
-                                      success: function (data) {
-                                          //console.log(data);
-                                          jsonArray = JSON.parse(data);
-                                          console.log(jsonArray);
-                                          //select = jsonArray;
-                                      },
-                                      error: function (xhr) {
-                                          console.log ("실패");
-                                      }
-                                  });
-                                  // var inner = "<thead><th>번호</th><th>직군</th><th>기업</th><th>질문내용</th></thead><tbody>"
-                                  // for jsonArray의 튜플 개수만큼
-                                  //    inner = inner+"<tr><td>"+index+"</td><td>"+jsonArray("major")
-                                  //            +"</td><td>"+jsonArray("company")+"</td><td>"
-                                  //            +jsonArray("question")+</td></tr>
-                                  // inner = inner + "</tbody>"
-
-                                  // document.getElementById("question_table").innerHTML = inner;
+                                    var inner = "<thead><th>번호</th><th>직군</th><th>기업</th><th>질문내용</th></thead><tbody>"
+                                    for (var i = 0; i < jsonArray.length; i++) {
+                                      inner = inner + "<tr><td>" + (i+1) + "</td><td>" + jsonArray[i].major + "</td><td>"
+                                                    + jsonArray[i].company + "</td><td>" + jsonArray[i].question + "</td></tr>";
+                                      inner = inner + "<tr><td></td><td></td>"
+                                          + "<td align=\"right\">" + "<button id=\"saveBtn_\"" + (i+1) + "type=\"button\" class=\"btn btn-info btn-sm\">저장</button>"
+                                          + "</td><td><textarea rows=\"3\" cols=\"60\" placeholder=\"답변 작성.\" class=\"form-control\" id=\"answer_"+ (i+1) +"\"></textarea></td></tr>";
+                                    }
+                                    inner = inner + "</tbody>";
+                                    document.getElementById("question_table").innerHTML = inner;
                                 }
-
-
                                 </script>
                             </div>
                         </div>
