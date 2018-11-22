@@ -51,8 +51,6 @@ $('table').click(function(e) {
                     error: function (xhr) {
                         console.log ("2");
                     }
-                });
-          location.href="post.html"
         }
     }
 });

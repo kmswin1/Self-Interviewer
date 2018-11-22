@@ -3,8 +3,13 @@ from flask import render_template, request, redirect, url_for
 from flask_cors import CORS
 import json
 import pymysql
-app = Flask(__name__, template_folder='static/templates')
+import os
+import smtplib
+from email.mime.text import MIMEText
 
+PWD = os.path.dirname(os.path.realpath(__file__))
+app = Flask(__name__, template_folder="static/templates", static_folder="static")
+id = {}
 # <------ error hander---------->
 
 @app.errorhandler(500)
@@ -38,11 +43,31 @@ def sign_in(userid):
    #         return log_the_user_in(request.form['userid'])
     #    else:
      #       error = 'Invalid user id/password'
-    return render_template('signin.html', error=error)
+    return render_template("signin.html", error=error)
 
 @app.route('/')
 def main():
-    return render_template("main.html")
+    return render_template("signin.html")
+
+
+@app.route('/sendQuestionOption', methods = ['PUT'])
+def getQuestion():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+
+    print(jsonObj)
+    sql = "SELECT * FROM Question WHERE major=%s and company=%s"
+    curs.execute(sql, (jsonObj["occupation"], jsonObj["company"]))
+    results = {}
+    results = curs.fetchall()
+    jsonObj = json.dumps(results)
+    conn.commit()
+    print (jsonObj)
+    print("getQuestion success.")
+    conn.close()
+    return jsonObj
+
 
 @app.route('/question')
 def question():
@@ -51,6 +76,35 @@ def question():
 @app.route('/matching')
 def matching():
     return render_template("matching.html")
+
+@app.route('/getMemberInfo', methods=['PUT'])
+def getMemberInfo():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    print (jsonObj)
+    sql = "select * from Member where company = %s and city = %s and town = %s and major = %s"
+    curs.execute(sql,(jsonObj["company"], jsonObj["city"], jsonObj["town"], jsonObj["major"]))
+    results = curs.fetchall()
+    jsonObj = json.dumps(results)
+    conn.commit()
+    print (jsonObj)
+    print ("getMemberInfo success")
+    conn.close()
+    return jsonObj
+
+@app.route('/setMember', methods=['POST'])
+def setMember():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    print (jsonObj)
+    sql = "insert into Matching(username, city, town, company, major, userInfo) values(%s, %s, %s, %s, %s, %s)"
+    curs.execute(sql,(jsonObj["username"], jsonObj["city"], jsonObj["town"], jsonObj["company"], jsonObj["major"], jsonObj["userInfo"]))
+    conn.commit()
+    print ("setMember success")
+    conn.close()
+    return redirect(url_for('matching'))
 
 @app.route('/studyroom')
 def studyroom():
@@ -72,15 +126,36 @@ def index():
 def mypage():
     return render_template("mypage.html")
 
+@app.route('/post')
+def post():
+    return render_template("post.html")
+
+@app.route('/getPostInfo', methods=['GET'])
+def getPostInfo():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+
+    sql = "select * from Info where id = %s"
+    global id
+    curs.execute(sql, (id))
+    results = curs.fetchone()
+    jsonObj = json.dumps(results)
+    conn.commit()
+    print ("getPostInfo success")
+    conn.close()
+    return jsonObj
+
+
 @app.route('/getInfo', methods=['GET'])
 def getInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
-    sql = "select * from Info"
+    sql = "select * from Info order by id desc"
     curs.execute(sql)
-    conn.commit()
     results = curs.fetchall()
     jsonObj = json.dumps(results)
+    conn.commit()
+    print (jsonObj)
     print ("getInfo success")
     conn.close()
     return jsonObj
@@ -99,6 +174,24 @@ def writeInfo():
     conn.close()
     return redirect(url_for('community'))
 
+@app.route('/clickInfo', methods=['PUT'])
+def clickInfo():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+
+    print (jsonObj)
+    sql = "select hit from Info where id = %s"
+    curs.execute(sql, (jsonObj["id"]))
+    sql = "update Info set hit = %s where id = %s"
+    curs.execute(sql, (jsonObj["sview"], jsonObj["id"]))
+    conn.commit()
+    print ("clickInfo success")
+    global id
+    id = jsonObj["id"]
+    conn.close()
+    return redirect(url_for('post'))
+
 
 @app.route('/reviseInfo', methods=['PUT'])
 def reviseInfo():
@@ -111,6 +204,23 @@ def delInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
     return 1
+
+@app.route('/sendEmail', methods=['POST'])
+def sendEmail():
+    smtp = smtplib.SMTP('smtp.live.com', 587)
+    smtp.ehlo()  # say Hello
+    smtp.starttls()  # TLS 사용시 필요
+    collegeMail = ''
+    mailId = ''
+    smtp.login('kmswin7@gmail.com', 'qhdwka12')
+
+    msg = MIMEText('본문 테스트 메시지')
+    msg['Subject'] = '테스트'
+    msg['To'] = mailId+'@'+collegeMail
+    smtp.sendmail('kmswin7@gmail.com', mailId+'@'+collegeMail , msg.as_string())
+
+    smtp.quit()
+
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
