@@ -136,6 +136,7 @@ def getPostInfo():
     curs = conn.cursor(pymysql.cursors.DictCursor)
 
     sql = "select * from Info where id = %s"
+    global id
     curs.execute(sql, (id))
     results = curs.fetchone()
     jsonObj = json.dumps(results)
@@ -186,6 +187,7 @@ def clickInfo():
     curs.execute(sql, (jsonObj["sview"], jsonObj["id"]))
     conn.commit()
     print ("clickInfo success")
+    global id
     id = jsonObj["id"]
     conn.close()
     return redirect(url_for('post'))

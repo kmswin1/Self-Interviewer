@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6979421d-a8a2-4e7a-8a89-9ecf080ef967" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-    </list>
+    <list default="true" id="6979421d-a8a2-4e7a-8a89-9ecf080ef967" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,14 +51,14 @@
         <counts>
           <entry key="HTML" value="1235" />
           <entry key="JavaScript" value="128" />
-          <entry key="Python" value="2805" />
+          <entry key="Python" value="2826" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="1235" />
           <entry key="js" value="128" />
-          <entry key="py" value="2805" />
+          <entry key="py" value="2826" />
         </counts>
       </usages-collector>
     </session>
@@ -89,13 +86,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="400">
+              <caret line="188" column="19" selection-start-line="188" selection-start-column="19" selection-end-line="188" selection-end-column="19" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1542894275461" expanded="true" signature="5362:5365" ph="..." />
-                <marker date="1542894275461" expanded="true" signature="5727:6110" ph="..." />
-                <marker date="1542894275461" expanded="true" signature="6108:6110" ph="..." />
+                <marker date="1542894421347" expanded="true" signature="5362:5365" ph="..." />
+                <marker date="1542894421347" expanded="true" signature="5727:6122" ph="..." />
+                <marker date="1542894421347" expanded="true" signature="6120:6122" ph="..." />
               </folding>
             </state>
           </provider>
@@ -326,7 +323,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3015873" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -489,13 +485,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="400">
+          <caret line="188" column="19" selection-start-line="188" selection-start-column="19" selection-end-line="188" selection-end-column="19" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1542894275461" expanded="true" signature="5362:5365" ph="..." />
-            <marker date="1542894275461" expanded="true" signature="5727:6110" ph="..." />
-            <marker date="1542894275461" expanded="true" signature="6108:6110" ph="..." />
+            <marker date="1542894421347" expanded="true" signature="5362:5365" ph="..." />
+            <marker date="1542894421347" expanded="true" signature="5727:6122" ph="..." />
+            <marker date="1542894421347" expanded="true" signature="6120:6122" ph="..." />
           </folding>
         </state>
       </provider>
