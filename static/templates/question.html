@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+</html>
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+<<<<<<< HEAD
     <title>Contact - Business Casual - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
@@ -16,6 +21,15 @@
 
     <!-- Custom CSS -->
     <link href="../css/business-casual.css" rel="stylesheet">
+=======
+    <title>Questions - 면접 준비 프로젝트 </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename = 'css/business-casual.css') }}" rel="stylesheet">
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -31,7 +45,12 @@
 </head>
 
 <body>
+<<<<<<< HEAD
   <a div class="brand" href="index.html">Interviewee</a>
+=======
+
+  <a div class="brand" href="{{ url_for("index") }}">InterviewNet</a>
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
   <div class="address-bar">소프트웨어 팀프로젝트 1팀</div>
 
     <!-- Navigation -->
@@ -46,12 +65,17 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+<<<<<<< HEAD
                 <a class="navbar-brand" href="index.html">Business Casual</a>
+=======
+                <a class="navbar-brand" href="{{ url_for('index') }}">Business Casual</a>
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
+<<<<<<< HEAD
                         <a href="main.html"> Main</a>
                     </li>
                     <li>
@@ -69,6 +93,26 @@
                     <li>
                         <button type="button-right" class="btn btn-info btn-sm"> Log-in</button>
                         <input type="button" class="btn btn-info btn-sm" value="Sign-in" onClick="location.href ='signin.html'">
+=======
+                        <a href="{{ url_for("main") }}"> Main</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for("question") }}">직종별 질문</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for("matching") }}">매칭 시스템</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for("studyroom") }}">스터디룸 예약</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for("community") }}">Community</a>
+                    </li>
+                    <li>
+                        <button type="button-right" class="btn btn-info btn-sm"> Log-in</button>
+                        <input type="button" class="btn btn-info btn-sm" value="Sign-in" onClick="location.href ='{{ url_for("sign_in") }}'">
+                        <input type="button" class="btn btn-info btn-sm" value="MyPage" onClick="location.href ='{{ url_for("mypage") }}'">
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
                     </li>
                 </ul>
             </div>
@@ -173,7 +217,11 @@
                                                 compItem = companyArray_13;
                                                 break;
                                             default:
+<<<<<<< HEAD
                                                 compItem = ["기업 선택"];
+=======
+                                                compItem = ["default"];
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
                                                 break;
                                         }
                                         document.getElementById("company").innerHTML = "<select id=\"company\" class=\"form-control\">"
@@ -189,14 +237,54 @@
                                 <br><br><center>
                                 <input type="hidden" name="save" value="contact">
                                 <button id="submit_btn" type="button" onclick="sendSelectValue()" class="btn btn-default">질문 보기</button></center>
+<<<<<<< HEAD
                                 <br><br>
 
+=======
+<!--
+                                <br><br>
+                                <div id="div_question">
+                                  <table id="question_table" class="table table-striped">
+                                    <thead>
+                                      <td>번호</td>
+                                      <td>직군</td>
+                                      <td>기업</td>
+                                      <td>질문내용</td>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>IT/인터넷</td>
+                                        <td>Google</td>
+                                        <td>Introduce yourself.</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div> -->
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
                               </div>
                             </div>
                             <div id="content" class="row">
                             	<div class="form-group col-lg-12">
                                 <table id="question_table" class="table table-striped">
+<<<<<<< HEAD
 
+=======
+                                  <thead>
+                                    <th>번호</th>
+                                    <th>직군</th>
+                                    <th>기업</th>
+                                    <th>질문내용</th>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>IT/인터넷</td>
+                                      <td>Google</td>
+                                      <td>Introduce yourself.</td>
+                                    </tr>
+                                  </tbody>
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
                                 </table>
                               </div>
                             </div>
@@ -206,7 +294,16 @@
                                     var xhttp = new XMLHttpRequest();
                                     var occupation = document.getElementById("occupation").value;
                                     var company = document.getElementById("company").value;
+<<<<<<< HEAD
 
+=======
+                                    xhttp.onreadystatechange = function() {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                          console.log(this.responseText);
+                                          document.getElementById("content_body").innerHTML = this.responseText;
+                                        }
+                                    };
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
                                     var occu_value = $("#occupation").val();
                                   	var comp_value = $("#company").val();
 
@@ -215,6 +312,7 @@
                                   		company : comp_value,
                                   	});
                                     console.log(json_data);
+<<<<<<< HEAD
                                     var url = "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/sendQuestionOption";
                                     xhttp.open("POST", url, true);
                                     xhttp.setRequestHeader('Content-Type', 'application/json');
@@ -228,11 +326,24 @@
                                 }*/
 
                                 function sendSelectValue() {
+=======
+
+
+                                    var url = "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/question";
+                                    xhttp.open("GET", url, true);
+                                    //xhttp.open("GET", "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/", true);
+                                    xhttp.send();
+                                }*/
+
+                                function sendSelectValue() {
+                                  console.log("sendS");
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
                                   	var occu_value = $("#occupation").val();
                                   	var comp_value = $("#company").val();
                                     var data;
                                     var jsonArray;
 
+<<<<<<< HEAD
                                     if (occu_value == "직종 선택" || comp_value == "기업 선택") {
                                       document.getElementById("question_table").innerHTML = "<p><center>직종 및 기업을 선택하세요.</center></p>";
                                       return ;
@@ -246,12 +357,23 @@
                                     console.log(json_data);
                                   	$.ajax({
                                   		type: 'PUT',
+=======
+
+                                  	json_data = JSON.stringify({
+                                  		occupation : occu_value,
+                                  		company : comp_value,
+                                  	});
+                                    //console.log(json_data);
+                                  	$.ajax({
+                                  		type: 'POST',
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
                                   		url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/sendQuestionOption",
                                   		contentType: 'application/json; charset=utf-8',
                                   		traditional: true,
                                   		async: false,
                                   		data: json_data,
                                   		success: function(data) {
+<<<<<<< HEAD
                                         var results = JSON.parse(data);
                                         jsonArray = results;
                                   			//console.log("sendsucc data : " + data);
@@ -272,6 +394,44 @@
                                     inner = inner + "</tbody>";
                                     document.getElementById("question_table").innerHTML = inner;
                                 }
+=======
+                                  			console.log(data);
+                                  		},
+                                  		error: function(xhr) {
+                                  			console.log("senderror data : " + data);
+                                  		}
+                                  	});
+                                    console.log(json_data);
+
+                                    $.ajax({
+                                      type: 'GET',
+                                      url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/sendQuestionOption",
+                                      contentType: 'application/json; charset=utf-8',
+                                      traditional: true,
+                                      async: false,
+                                      data: jsonArray,
+                                      success: function (data) {
+                                          //console.log(data);
+                                          jsonArray = JSON.parse(data);
+                                          console.log(jsonArray);
+                                          //select = jsonArray;
+                                      },
+                                      error: function (xhr) {
+                                          console.log ("실패");
+                                      }
+                                  });
+                                  // var inner = "<thead><th>번호</th><th>직군</th><th>기업</th><th>질문내용</th></thead><tbody>"
+                                  // for jsonArray의 튜플 개수만큼
+                                  //    inner = inner+"<tr><td>"+index+"</td><td>"+jsonArray("major")
+                                  //            +"</td><td>"+jsonArray("company")+"</td><td>"
+                                  //            +jsonArray("question")+</td></tr>
+                                  // inner = inner + "</tbody>"
+
+                                  // document.getElementById("question_table").innerHTML = inner;
+                                }
+
+
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
                                 </script>
                             </div>
                         </div>
@@ -294,10 +454,17 @@
     </footer>
 
     <!-- jQuery -->
+<<<<<<< HEAD
     <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
+=======
+    <script src="{{ url_for('static', filename = 'js/jquery.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <link href="{{ url_for('static', filename = 'js/bootstrap.js') }}" rel="stylesheet">
+>>>>>>> e6aec6c604d6dcb5f6050087a9bfda6d0466df2c
 
 </body>
 

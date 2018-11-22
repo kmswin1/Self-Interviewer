@@ -1,1 +1,3 @@
-# Self-Interviewer
+# InterviewNet
+
+python run.py
