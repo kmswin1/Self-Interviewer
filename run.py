@@ -9,6 +9,7 @@ from email.mime.text import MIMEText
 
 PWD = os.path.dirname(os.path.realpath(__file__))
 app = Flask(__name__, template_folder="static/templates", static_folder="static")
+id = {}
 # <------ error hander---------->
 
 @app.errorhandler(500)
@@ -129,14 +130,13 @@ def mypage():
 def post():
     return render_template("post.html")
 
-@app.route('/getPostInfo', methods=['PUT'])
+@app.route('/getPostInfo', methods=['GET'])
 def getPostInfo():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
-    jsonObj = request.get_json()
 
     sql = "select * from Info where id = %s"
-    curs.execute(sql, (jsonObj["id"]))
+    curs.execute(sql, (id))
     results = curs.fetchone()
     jsonObj = json.dumps(results)
     conn.commit()
@@ -184,9 +184,9 @@ def clickInfo():
     curs.execute(sql, (jsonObj["id"]))
     sql = "update Info set hit = %s where id = %s"
     curs.execute(sql, (jsonObj["sview"], jsonObj["id"]))
-    id = jsonObj["id"]
     conn.commit()
     print ("clickInfo success")
+    id = jsonObj["id"]
     conn.close()
     return redirect(url_for('post'))
 
@@ -209,13 +209,13 @@ def sendEmail():
     smtp.ehlo()  # say Hello
     smtp.starttls()  # TLS 사용시 필요
     collegeMail = ''
-    id = ''
+    mailId = ''
     smtp.login('kmswin7@gmail.com', 'qhdwka12')
 
     msg = MIMEText('본문 테스트 메시지')
     msg['Subject'] = '테스트'
-    msg['To'] = id+'@'+collegeMail
-    smtp.sendmail('kmswin7@gmail.com', id+'@'+collegeMail , msg.as_string())
+    msg['To'] = mailId+'@'+collegeMail
+    smtp.sendmail('kmswin7@gmail.com', mailId+'@'+collegeMail , msg.as_string())
 
     smtp.quit()
 
