@@ -93,7 +93,7 @@ def getMemberInfo():
     return jsonObj
 
 @app.route('/setMember', methods=['POST'])
-def getMemberInfo():
+def setMember():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
     jsonObj = request.get_json()
@@ -101,7 +101,7 @@ def getMemberInfo():
     sql = "insert into Matching(username, city, town, company, major, userInfo) values(%s, %s, %s, %s, %s, %s)"
     curs.execute(sql,(jsonObj["username"], jsonObj["city"], jsonObj["town"], jsonObj["company"], jsonObj["major"], jsonObj["userInfo"]))
     conn.commit()
-    print ("getMemberInfo success")
+    print ("setMember success")
     conn.close()
     return redirect(url_for('matching'))
 
