@@ -4,7 +4,9 @@
  "stext":"12324weasdfasd@@@@@@@@@@@@@@@@@@@@@@!@#$ ^&@@@@@@@@@  @@@@@@@@@@@@@@@@@@@@@2$   #@#%%%%%%%#########################%##@@#@#@#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@sample",
  "stime":"10/17/3:33",
  "sview":"0"};*/
+
 var jsondata;
+
 $.ajax({
            type: 'GET',
            url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/getPostInfo",
@@ -15,13 +17,16 @@ $.ajax({
            success: function (data) {
                console.log(data);
                jsondata = JSON.parse(data)
+            
            },
            error: function (xhr) {
                console.log ("실패");
-               console.log(jsondata);
+               console.log(data);
+
            }
        });
-//console.log(jsonArray);
+       console.log(jsondata);
+
 var myHTMLStr2 = '<table>';
 myHTMLStr2 += '<thead><tr><th></th><th></th><th></th><th></th></tr></thead>'
 + '<tr><th class="success">글번호</th><td>'
@@ -32,7 +37,6 @@ myHTMLStr2 += '<thead><tr><th></th><th></th><th></th><th></th></tr></thead>'
 + jsondata['title'] + '</td></tr><tr><th class="success">글 내용</th><td width="12" colspan="3">'
 + jsondata['text'] + '</td></tr>'
 
-
 myHTMLStr2 += '</table>';
-var han = document.getElementById('posttable')
+var han = document.getElementById('selectpost')
 han.innerHTML = myHTMLStr2;

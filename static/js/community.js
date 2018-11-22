@@ -4,7 +4,7 @@ var select;
 var idx;
 var hitupdate;
 var targetpost;
-
+var han;
 $.ajax({
           type: 'GET',
           url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/getInfo",
@@ -22,7 +22,6 @@ $.ajax({
           }
       });
 //console.log(jsonArray[1]);
-
 $('table').click(function(e) {
     if(e.target.tagName == "TD") {
         if($("table td:lt(" + (idx + 1) + ")")){
@@ -36,9 +35,8 @@ $('table').click(function(e) {
                         stext : select[a]['text'],
                         sview : select[a]['hit'],
                         stime : select[a]['time'],
-                      })
-          targetpost = json_data;
-          alert(targetpost);
+                      });
+
 
           $.ajax({
                     type: 'PUT',
@@ -56,7 +54,6 @@ $('table').click(function(e) {
                 });
           location.href="post.html"
         }
-        //location.href="post.html"
     }
 });
 
@@ -72,8 +69,6 @@ for(j=1;j<=page;j++){
 
 var btn = document.getElementById('pageselect');
 btn.innerHTML = myHTMLBtn;
-
-
 
 var myHTMLStr = '<table>';
 myHTMLStr ='<tr><th> 작성자</th><th> 게시글 제목 </th><th> 작성시간 </th><th> 조회수 </th></tr>';

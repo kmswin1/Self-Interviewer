@@ -104,25 +104,24 @@
                                 <label>닉네임</label>
                                 <input type="text" id="nickname" name="nickname" title="닉네임" class="form-control" maxlength="20">
                                 <label>이름</label>
-                                <input type="text" id="sname" name="name" title="이름" class="form-control" maxlength="40">
+                                <input type="text" id="sname" name="sname" title="이름" class="form-control" maxlength="40">
                                 <label>학과</label>
-                                <input type="text" id="major" name="major" title="학과" class="form-control" maxlength="40">
-
+                                <input type="text" id="smajor" name="smajor" title="이름" class="form-control" maxlength="40">
                                 <label>대학교를 선택해주세요.</label>
-                                <select id="college_list" name="selectcollege" class="form-control">
+                                <select id="college_list" name="selectcollege"class="form-control">
+
 
                                 </select>
+                                <label>지역을 선택해주세요.</label>
+                                <select id="city_list" name="selectcollege"class="form-control">
 
-                                <label>도시를 선택해주세요.</label>
-                                <select id="city_list" name="selectcity" class="form-control">
 
                                 </select>
-
                                 <label>지역구를 선택해주세요.</label>
-                                <select id="town_list" name="selectcity" class="form-control">
+                                <select id="town_list" name="selectcollege"class="form-control">
+
 
                                 </select>
-
                                 <label>생년월일</label>
                                 <div>
                                 	<div class="form-group col-lg-4">
@@ -151,11 +150,22 @@
                                 </div>
                                 <label>성별</label>
                                 <select id="gender" name="gender" class="form-control">
-                                	<option value="남">남</option>
-                                	<option value="여">여</option>
+                                	<option value="0">남</option>
+                                	<option value="1">여</option>
                                 </select>
                                 <label>이메일</label>
-                                <input type="email" id="emailaddress" name="emailaddress" placeholder="example@gmail.com" class="form-control">
+                                <div>
+                                  <div class="form-group row-lg-4">
+                                    <input type="email" id="emailaddress" name="emailaddress" placeholder="example@gmail.com" class="form-control">
+                                  </div>
+                                  <div class="form-group row-lg-4">
+                                    <input type="email" id="emailaddress" name="emailaddress" placeholder="example@gmail.com" class="form-control">
+                                  </div>
+                                  <div class="form-group row-lg-4">
+                                    <input type="email" id="emailaddress" name="emailaddress" placeholder="example@gmail.com" class="form-control">
+                                  </div>
+                                </div>
+                              </div>
                                 <br><br><center>
                                 <input type="hidden" name="save" value="contact">
                                 <button type="button" class="btn btn-default" onClick="signup()">가입하기</button></center>
