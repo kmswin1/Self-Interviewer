@@ -14,7 +14,7 @@
     <!-- Custom CSS -->
     <link href="{{ url_for('static', filename = 'css/business-casual.css') }}" rel="stylesheet">
 
-    <link href="../css/doc.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/doc.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -31,7 +31,7 @@
   <script src="http://code.jquery.com/jquery-1.11.0.js"> </script>
   <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script> -->
 
-  <script src="../js/studyroom.js"> </script>
+  <script src="{{ url_for('static', filename = 'js/studyroom.js') }}"> </script>
 
 </head>
 
@@ -101,7 +101,7 @@
 
                 </div>
 
-                 <div class="col-lg-12 text-center" style="margin-top: 15px; margin-left: 20px; color">
+                 <div class="col-lg-12 text-center" style="margin-top: 15px; margin-left: 20px;">
                  	<div class="row">
  						<div class="col-lg-2"></div>
 		 				<div class="col-lg-8 text-left">
