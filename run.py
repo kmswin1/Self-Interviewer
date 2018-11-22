@@ -4,6 +4,7 @@ from flask_cors import CORS
 import json
 import pymysql
 import os
+import question
 
 PWD = os.path.dirname(os.path.realpath(__file__))
 app = Flask(__name__, template_folder="static/templates", static_folder="static")
