@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6979421d-a8a2-4e7a-8a89-9ecf080ef967" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/templates/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/question.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/studyroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/studyroom.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/studyroom.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7634">
+            <state relative-caret-position="477">
               <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -122,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/templates/question.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="70" column="133" selection-start-line="70" selection-start-column="133" selection-end-line="70" selection-end-column="133" />
+            <state relative-caret-position="-3440">
+              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
               <folding>
                 <element signature="e#16150#16156#0#HTML" expanded="true" />
               </folding>
@@ -154,8 +152,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/community.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="122" selection-start-line="122" selection-end-line="128" selection-end-column="81" />
+            <state relative-caret-position="105">
+              <caret line="34" selection-start-line="34" selection-end-line="79" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -498,9 +496,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/templates/questionbody.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/templates/studyroom.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7634">
+        <state relative-caret-position="477">
           <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -510,20 +513,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/templates/community.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="122" selection-start-line="122" selection-end-line="128" selection-end-column="81" />
+        <state relative-caret-position="105">
+          <caret line="34" selection-start-line="34" selection-end-line="79" selection-end-column="10" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/questionbody.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/templates/question.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="70" column="133" selection-start-line="70" selection-start-column="133" selection-end-line="70" selection-end-column="133" />
+        <state relative-caret-position="-3440">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
           <folding>
             <element signature="e#16150#16156#0#HTML" expanded="true" />
           </folding>
