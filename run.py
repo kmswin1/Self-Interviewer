@@ -83,7 +83,7 @@ def getMemberInfo():
     curs = conn.cursor(pymysql.cursors.DictCursor)
     jsonObj = request.get_json()
     print (jsonObj)
-    sql = "select * from Member where company = %s and city = %s and town = %s and major = %s"
+    sql = "select * from Matching where company = %s and city = %s and town = %s and major = %s"
     curs.execute(sql,(jsonObj["company"], jsonObj["city"], jsonObj["town"], jsonObj["major"]))
     results = curs.fetchall()
     jsonObj = json.dumps(results)
