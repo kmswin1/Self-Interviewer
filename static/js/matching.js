@@ -1,18 +1,21 @@
 var userJsonArr = ''
 
+/**
+ * 매칭 된 결과를
+ * */
 function matchingSearch() {
     var myJSON = JSON.stringify({
         company:'삼성전자',
-        city:'고양시',
-        town:'행신동',
+        city:'서울특별시',
+        town:'제기동',
         major:'SW개발'
     });
 
-    // 등록된 사람 불러오기
+    // 매칭 요청
     $.ajax({
         type: 'PUT',
         url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/getMemberInfo",
-        contentType: 'application/json; charset=utf-8',
+        contentType: 'application/json; charset=UTF-8',
         traditional: true,
         async: false,
         data: myJSON,
@@ -23,20 +26,20 @@ function matchingSearch() {
         },
         error: function (xhr) {
             console.log ("실패");
-            console.log(xhr)
+            alert("매칭 결과를 불러오지 못했습니다. 검색 옵션을 다시 확인해주세요.");
         }
     });
 
-    // 카드뷰 그리기
+    // 요청(PUT) 결과를 카드뷰로 그리기
     var myHTML = '';
 
     for(i = 0; i < userJsonArr.length; i++) {
         myHTML += '<div class="card">' +
             '<img src="../resources/img_avatar.png">' +
             '<div class="container2">' +
-            '<h4><b>' + userJsonArr[i]['name'] + '</b></h4>' +
-            '<p>' + userJsonArr[i]['location'] +'</p>' +
-            '<p>' + userJsonArr[i]['text_info'] + '</p>' +
+            '<h4><b>' + userJsonArr[i]['username'] + '</b></h4>' +
+            '<p>' + userJsonArr[i]['city'] + ' ' + userJsonArr[i]['town'] + '</p>' +
+            '<p>' + userJsonArr[i]['userInfo'] + '</p>' +
             '</div>' +
             '</div>';
     }

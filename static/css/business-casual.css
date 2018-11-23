@@ -84,6 +84,8 @@ hr {
     background: rgba(255,255,255,0.9);
 }
 
+
+
 .intro-text {
     text-transform: uppercase;
     font-size: 1.25em;
@@ -202,6 +204,16 @@ footer p {
 }
 
 /* mathcing.html 사용자 카드뷰*/
+.card_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 30px 15px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
+
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -209,8 +221,8 @@ footer p {
     border-radius: 5px; /* 5px rounded corners */
     width: 300px;
     height: auto;
-    float: left;
-    margin: 40px;
+    /*float: left;*/
+    margin: 20px;
     background-color: white;
 }
 
