@@ -47,7 +47,7 @@ def sign_in(userid):
 
 @app.route('/')
 def main():
-    return render_template("signin.html")
+    return render_template("main.html")
 
 
 @app.route('/sendQuestionOption', methods = ['PUT'])
