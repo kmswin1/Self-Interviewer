@@ -96,9 +96,10 @@ function matchingSearch() {
 
     // 요청(PUT) 결과를 카드뷰로 그리기
     var myHTML = '';
+    var imgSrc = "{{ url_for('static', filename = 'js/jquery.js') }}";
     for(i = 0; i < userJsonArr.length; i++) {
         myHTML += '<div class="card">' +
-            '<img src="http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/static/resources/img_avatar.png">' +
+            '<img src='+imgSrc+'>' +
             '<div class="container2">' +
             '<h4><b>' + userJsonArr[i]['username'] + '</b></h4>' +
             '<p>' + userJsonArr[i]['city'] + ' ' + userJsonArr[i]['town'] + '</p>' +
