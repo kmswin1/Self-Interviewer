@@ -6,7 +6,15 @@ function send(){
   var sample = $("#stitle").val();
   var stext = $("#stext").val();
   var sid = "sampleid";
-  var stime = nowDate.getMonth() + "/" + nowDate.getDate() + "/" + nowDate.getHours() + ":" + nowDate.getMinutes();
+  var hour = nowDate.getHours();
+  var min = nowDate.getMinutes();
+  if (hour / 10 === 0) {
+      hour = "0"+hour;
+  }
+  if (min / 10 === 0) {
+      min = "0"+min;
+  }
+  var stime = nowDate.getMonth() + "/" + nowDate.getDate() + "/" + hour + ":" + min;
   var sview = "0";
 
   json_data = JSON.stringify({

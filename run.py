@@ -34,20 +34,13 @@ def getConnection():
     return pymysql.connect(host='54.244.72.128', user='root', password='1234',
                            db='InterviewNet', charset='utf8')
 
-@app.route('/signin')
-def sign_in(userid):
-    error = None
-#    if request.method == 'POST':
- #       if valid_login(request.form['userid'],
-  #                     request.form['userpw']):
-   #         return log_the_user_in(request.form['userid'])
-    #    else:
-     #       error = 'Invalid user id/password'
-    return render_template("signin.html", error=error)
+@app.route('/sign_up')
+def sign_up():
+    return render_template("signup.html")
 
 @app.route('/')
 def main():
-    return render_template("signin.html")
+    return render_template("main.html")
 
 
 @app.route('/sendQuestionOption', methods = ['PUT'])
@@ -83,7 +76,7 @@ def getMemberInfo():
     curs = conn.cursor(pymysql.cursors.DictCursor)
     jsonObj = request.get_json()
     print (jsonObj)
-    sql = "select * from Member where company = %s and city = %s and town = %s and major = %s"
+    sql = "select * from Matching where company = %s and city = %s and town = %s and major = %s"
     curs.execute(sql,(jsonObj["company"], jsonObj["city"], jsonObj["town"], jsonObj["major"]))
     results = curs.fetchall()
     jsonObj = json.dumps(results)
@@ -212,7 +205,7 @@ def sendEmail():
     smtp.starttls()  # TLS 사용시 필요
     collegeMail = ''
     id = ''
-    smtp.login('kmswin7@gmail.com', 'qhdwka12')
+    smtp.login('kmswin7@gmail.com', '1234')
 
     msg = MIMEText('본문 테스트 메시지')
     msg['Subject'] = '테스트'
