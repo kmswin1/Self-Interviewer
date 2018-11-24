@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6979421d-a8a2-4e7a-8a89-9ecf080ef967" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/community.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/community.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/matching.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/matching.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/mypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/mypage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/templates/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/question.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/studyroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/studyroom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/templates/write.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/templates/write.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,19 +18,19 @@
     <session id="1244882521">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="4" />
+          <entry key="project.open.time.8" value="5" />
           <entry key="project.open.time.9" value="9" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="LICENSE" value="1" />
-          <entry key="html" value="86" />
+          <entry key="html" value="87" />
           <entry key="jpg" value="5" />
           <entry key="js" value="13" />
           <entry key="md" value="1" />
@@ -49,7 +40,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="86" />
+          <entry key="HTML" value="87" />
           <entry key="Image" value="5" />
           <entry key="JavaScript" value="13" />
           <entry key="Markdown" value="1" />
@@ -61,14 +52,14 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1616" />
+          <entry key="HTML" value="1764" />
           <entry key="JavaScript" value="162" />
           <entry key="Python" value="2869" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1616" />
+          <entry key="html" value="1764" />
           <entry key="js" value="162" />
           <entry key="py" value="2869" />
         </counts>
@@ -77,11 +68,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/studyroom.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8501">
-              <caret line="619" column="51" selection-start-line="619" selection-start-column="51" selection-end-line="619" selection-end-column="51" />
+            <state relative-caret-position="520">
+              <caret line="485" column="64" selection-start-line="485" selection-start-column="64" selection-end-line="485" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -89,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/write.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-260">
+            <state relative-caret-position="1545">
               <caret line="103" column="44" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="44" />
             </state>
           </provider>
@@ -98,7 +89,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/matching.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-575">
+            <state relative-caret-position="1335">
               <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
             </state>
           </provider>
@@ -112,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/signin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="2790">
               <caret line="186" column="51" selection-start-line="186" selection-start-column="51" selection-end-line="186" selection-end-column="51" />
             </state>
           </provider>
@@ -121,17 +112,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/mypage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="1965">
               <caret line="131" column="51" selection-start-line="131" selection-start-column="51" selection-end-line="131" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/templates/question.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="282" column="51" selection-start-line="282" selection-start-column="51" selection-end-line="282" selection-end-column="51" />
+            <state relative-caret-position="103">
+              <caret line="102" column="51" lean-forward="true" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -139,7 +130,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
+            <state relative-caret-position="2280">
               <caret line="152" column="51" selection-start-line="152" selection-start-column="51" selection-end-line="152" selection-end-column="51" />
             </state>
           </provider>
@@ -148,17 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
+            <state relative-caret-position="2520">
               <caret line="168" column="51" selection-start-line="168" selection-start-column="51" selection-end-line="168" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/templates/community.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="88" column="36" selection-start-line="88" selection-start-column="36" selection-end-line="88" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -195,12 +177,12 @@
         <option value="$PROJECT_DIR$/static/templates/index.html" />
         <option value="$PROJECT_DIR$/static/templates/main.html" />
         <option value="$PROJECT_DIR$/static/templates/matching.html" />
-        <option value="$PROJECT_DIR$/static/templates/question.html" />
         <option value="$PROJECT_DIR$/static/templates/post.html" />
         <option value="$PROJECT_DIR$/static/templates/mypage.html" />
         <option value="$PROJECT_DIR$/static/templates/signin.html" />
-        <option value="$PROJECT_DIR$/static/templates/studyroom.html" />
         <option value="$PROJECT_DIR$/static/templates/write.html" />
+        <option value="$PROJECT_DIR$/static/templates/studyroom.html" />
+        <option value="$PROJECT_DIR$/static/templates/question.html" />
       </list>
     </option>
   </component>
@@ -210,11 +192,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-452" />
-    <option name="y" value="23" />
-    <option name="width" value="1206" />
-    <option name="height" value="830" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
@@ -333,7 +313,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31623933" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31990233" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -415,13 +395,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/post.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/write.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -457,38 +431,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/question.html">
+    <entry file="file://$USER_HOME$/Desktop/studyroom2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="282" column="51" selection-start-line="282" selection-start-column="51" selection-end-line="282" selection-end-column="51" />
+        <state relative-caret-position="60">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="131" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/post.html">
+    <entry file="file://$PROJECT_DIR$/static/templates/studyroom.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="152" column="51" selection-start-line="152" selection-start-column="51" selection-end-line="152" selection-end-column="51" />
+        <state relative-caret-position="520">
+          <caret line="485" column="64" selection-start-line="485" selection-start-column="64" selection-end-line="485" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/mypage.html">
+    <entry file="file://$PROJECT_DIR$/static/templates/write.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="131" column="51" selection-start-line="131" selection-start-column="51" selection-end-line="131" selection-end-column="51" />
+        <state relative-caret-position="1545">
+          <caret line="103" column="44" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/templates/matching.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-575">
+        <state relative-caret-position="1335">
           <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="168" column="51" selection-start-line="168" selection-start-column="51" selection-end-line="168" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -497,22 +464,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/templates/signin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
+        <state relative-caret-position="2790">
           <caret line="186" column="51" selection-start-line="186" selection-start-column="51" selection-end-line="186" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/write.html">
+    <entry file="file://$PROJECT_DIR$/static/templates/mypage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-260">
-          <caret line="103" column="44" selection-start-line="103" selection-start-column="39" selection-end-line="103" selection-end-column="44" />
+        <state relative-caret-position="1965">
+          <caret line="131" column="51" selection-start-line="131" selection-start-column="51" selection-end-line="131" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/studyroom.html">
+    <entry file="file://$PROJECT_DIR$/static/templates/post.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8501">
-          <caret line="619" column="51" selection-start-line="619" selection-start-column="51" selection-end-line="619" selection-end-column="51" />
+        <state relative-caret-position="2280">
+          <caret line="152" column="51" selection-start-line="152" selection-start-column="51" selection-end-line="152" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
+          <caret line="168" column="51" selection-start-line="168" selection-start-column="51" selection-end-line="168" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/templates/question.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="102" column="51" lean-forward="true" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="57" />
         </state>
       </provider>
     </entry>
