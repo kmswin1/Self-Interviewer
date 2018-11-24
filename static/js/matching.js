@@ -96,7 +96,7 @@ function matchingSearch() {
 
     // 요청(PUT) 결과를 카드뷰로 그리기
     var myHTML = '';
-    var imgSrc = "{{ url_for('static', filename = 'js/jquery.js') }}";
+    var imgSrc = "{{ url_for('static', filename = 'resources/img_avatar.png') }}";
     for(i = 0; i < userJsonArr.length; i++) {
         myHTML += '<div class="card">' +
             '<img src='+imgSrc+'>' +
