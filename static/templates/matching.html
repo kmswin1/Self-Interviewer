@@ -12,10 +12,9 @@
     <title>About - InterviewNet - 면접 준비 프로젝트</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
-
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{ url_for('static', filename = 'css/business-casual.css') }}" rel="stylesheet">
+    <link href="../css/business-casual.css" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -32,7 +31,7 @@
 
 <body>
 
-  <a div class="brand" href="{{ url_for("index") }}">InterviewNet</a>
+  <a div class="brand" href="index.html">InterviewNet</a>
   <div class="address-bar">소프트웨어 팀프로젝트 1팀</div>
 
     <!-- Navigation -->
@@ -53,24 +52,21 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{{ url_for("main") }}"> Main</a>
+                        <a href="main.html"> Main</a>
                     </li>
                     <li>
-                        <a href="{{ url_for("question") }}">직종별 질문</a>
+                        <a href="question.html">직종별 질문</a>
                     </li>
                     <li>
-                        <a href="{{ url_for("matching") }}">매칭 시스템</a>
+                        <a href="matching.html">매칭 시스템</a>
                     </li>
                     <li>
-                        <a href="{{ url_for("studyroom") }}">스터디룸 예약</a>
+                        <a href="studyroom.html">스터디룸 예약</a>
                     </li>
                     <li>
-                        <a href="{{ url_for("community") }}">Community</a>
+                        <a href="community.html">Community</a>
                     </li>
                     <li>
-                        <button type="button-right" class="btn btn-info btn-sm"> Sign-in</button>
-                        <input type="button" class="btn btn-info btn-sm" value="Sign-up" onClick="location.href ='{{ url_for("sign_up") }}'">
-                        <input type="button" class="btn btn-info btn-sm" value="MyPage" onClick="location.href ='{{ url_for("mypage") }}'">
                     </li>
                 </ul>
             </div>
@@ -79,61 +75,35 @@
         <!-- /.container -->
     </nav>
 
-
     <div class="container">
-
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">매칭시스템
-                        <strong>스터디원 매칭</strong>
-                    </h2>
                     <hr>
                 </div>
-                <div class="col-md-6">
-                    <img class="img-responsive img-border-left" src="{{ url_for('static', filename = 'resources/slide-2.jpg') }}" alt="">
-                </div>
-                <div class="col-md-6">
-                    <p>This is a great place to introduce your company or project and describe what you do.</p>
-                    <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.</p>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                </div>
+                <div class="col-lg-12"><p class="text-center">원하는 지역과 직종을 선택하고, 동일 직종 사용자를 찾아보세요!</p></div>
+                <br>
+                <!--<button type="button-right" class="btn-group-lg btn-lg col-lg-3">등록</button>-->
+                <label>지원 기업</label>
+                <select class="form-control col-lg-3" id="sel_company"><option>기업 선택</option></select>
+                <br>
+                <label>직종</label>
+                <select class="form-control col-lg-3" id="sel_major"><option>직종 선택</option></select>
+                <br>
+                <label>희망 지역</label>
+                <select class="form-control col-lg-3" id="sel_location"><option>지역 선택</option></select>
+                <br>
+                <button type="button" class="btn-group-lg btn-lg center-block" onclick="matchingSearch()">매칭 찾기</button>
                 <div class="clearfix"></div>
             </div>
         </div>
 
+        <!--사용자 카드뷰-->
         <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">Our
-                        <strong>Team 1</strong>
-                    </h2>
-                    <hr>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>김 민 상 / 김 한 주 / 김 현 동
-                        <small>개 발</small>
-                    </h3>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>이 찬 주 / 김 경 민
-                        <small>개 발</small>
-                    </h3>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>김 유 리 / 이 혜 진 / 홍 석 준
-                        <small>기획, 디자인</small>
-                    </h3>
-                </div>
                 <div class="clearfix"></div>
             </div>
         </div>
-
     </div>
     <!-- /.container -->
 
@@ -148,11 +118,13 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="{{ url_for('static', filename = 'js/jquery.js') }}"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <link href="{{ url_for('static', filename = 'js/bootstrap.js') }}" rel="stylesheet">
+    <script src="../js/bootstrap.min.js"></script>
 
+    <!-- my javascript -->
+    <script type="text/javascript" src="../js/matching.js"></script>
 </body>
 
 </html>
