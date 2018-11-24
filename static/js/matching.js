@@ -96,10 +96,9 @@ function matchingSearch() {
 
     // 요청(PUT) 결과를 카드뷰로 그리기
     var myHTML = '';
-    var imgSrc = "{{ url_for('static', filename = 'resources/img_avatar.png') }}";
     for(i = 0; i < userJsonArr.length; i++) {
         myHTML += '<div class="card">' +
-            '<img src='+imgSrc+'>' +
+            '<img src= "https://www.w3schools.com/howto/img_avatar.png">' +
             '<div class="container2">' +
             '<h4><b>' + userJsonArr[i]['username'] + '</b></h4>' +
             '<p>' + userJsonArr[i]['city'] + ' ' + userJsonArr[i]['town'] + '</p>' +
