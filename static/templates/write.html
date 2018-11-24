@@ -53,7 +53,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Business Casual</a>
+                <a class="navbar-brand" href="{{ url_for('index') }}">Business Casual</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -74,7 +74,7 @@
                         <a href="{{ url_for("community") }}">Community</a>
                     </li>
                     <li>
-                        <button type="button-right" class="btn btn-info btn-sm"> Log-in</button>
+                        <button type="button-right" class="btn btn-info btn-sm">Sign-up</button>
                         <input type="button" class="btn btn-info btn-sm" value="Sign-in" onClick="location.href ='{{ url_for("sign_in") }}'">
                         <input type="button" class="btn btn-info btn-sm" value="MyPage" onClick="location.href ='{{ url_for("mypage") }}'">
                     </li>
@@ -94,10 +94,10 @@
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">글쓰기기능
-                        <strong>구현하기</strong>
+                        <strong>글쓰기</strong>
                     </h2>
                     <hr>
-                    <p>글쓰기 기능을 빨리 구현하고 싶습니다.</p>
+                    <p>원하는 면접 관련 후기, 질문 등을 작성해주세요.</p>
                     <form role="form">
                         <div class="row">
                             <div class="form-group col-lg-12">
@@ -128,7 +128,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; 소프트웨어 공학 1조</p>
                 </div>
             </div>
         </div>
