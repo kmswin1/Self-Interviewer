@@ -98,7 +98,7 @@ function matchingSearch() {
     var myHTML = '';
     for(i = 0; i < userJsonArr.length; i++) {
         myHTML += '<div class="card">' +
-            '<img src="../resources/img_avatar.png">' +
+            '<img src="{{ url_for(\'static\', filename = \'resources/img_avatar.png\') }}">' +
             '<div class="container2">' +
             '<h4><b>' + userJsonArr[i]['username'] + '</b></h4>' +
             '<p>' + userJsonArr[i]['city'] + ' ' + userJsonArr[i]['town'] + '</p>' +
