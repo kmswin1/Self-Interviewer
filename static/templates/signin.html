@@ -122,6 +122,7 @@
 
 
                                 </select>
+
                                 <label>생년월일</label>
                                 <div>
                                 	<div class="form-group col-lg-4">
@@ -156,19 +157,21 @@
                                 <label>이메일</label>
                                 <div>
                                   <div class="form-group row-lg-4">
-                                    <input type="email" id="emailaddress" name="emailaddress" placeholder="example@gmail.com" class="form-control">
-                                  </div>
-                                  <div class="form-group row-lg-4">
-                                    <input type="email" id="emailaddress" name="emailaddress" placeholder="example@gmail.com" class="form-control">
-                                  </div>
-                                  <div class="form-group row-lg-4">
-                                    <input type="email" id="emailaddress" name="emailaddress" placeholder="example@gmail.com" class="form-control">
+                                    <input type="email" id="emailaddress" name="emailaddress" plac1eholder="example@gmail.com">
+                                    <button type="button" class="btn-xs btn-info" onclick="random()" value="인증하기">인증하기</button>
                                   </div>
                                 </div>
+                                <label>인증번호</label>
+                                <div>
+                                <input type="text" id="auth" name="auth">
                               </div>
-                                <br><br><center>
-                                <input type="hidden" name="save" value="contact">
-                                <button type="button" class="btn btn-default" onClick="signup()">가입하기</button></center>
+                                  <br><center>
+                                  <input type="hidden" name="save" value="contact">
+                                  <button type="button" class="btn-sm btn-info" onClick="signup()"> 가입하기 </button></center>
+                                </br>
+                                </div>
+                              </div>
+
                             </div>
                         </div>
                     </form>

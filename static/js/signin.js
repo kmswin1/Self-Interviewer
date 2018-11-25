@@ -1,7 +1,7 @@
 var collist;
 var citlist;
 var towlist;
-
+var authn;
 collegelist();
 citylist();
 townlist();
@@ -15,7 +15,7 @@ col_list.innerHTML = myHTMLStr;
 
 var myHTMLStr2 = '<option>★ㅋㅋ큰 지역 선택ㅋ~ㅋㅋ★</option>';
 for(var i = 0; i < citlist.length; i++)
-  myHTMLStr2+='<option value="' + citlist[i] + '" onClick = update(' + i +')>'+ citlist[i] + '</option>';
+  myHTMLStr2+='<option value="' + citlist[i] + '" onClick = update('+ i +')>'+ citlist[i] + '</option>';
 var city_list = document.getElementById('city_list')
 city_list.innerHTML = myHTMLStr2;
 
@@ -23,7 +23,6 @@ city_list.innerHTML = myHTMLStr2;
 function update(cityvalue){
       var myHTMLStr3 = '<option>지역구 선택.</option>'
       switch(cityvalue){
-
       case 0:
         for(var i = 0; i < townlist0.length; i++) myHTMLStr3+='<option value="' + townlist0[i] + '">'+ townlist0[i] + '</option>';
         break;
@@ -80,6 +79,13 @@ function update(cityvalue){
     town_list.innerHTML = myHTMLStr3;
 }
 
+function random(){
+  var authNum;
+  authNum = Math.floor(Math.random() * 10000000) + 1;
+  console.log(authNum);
+  authn = authNum;
+}
+
 function signup(){
   if(pw1.value.length == 0) alert("비밀번호를 입력해주세요.");
   else if(pw1.value.length < 4) alert("4자 이상으로 입력해주세요.");
@@ -95,6 +101,7 @@ function signup(){
   var susername = $("#name").val();
   var spoint = 0;
   var sbirth = $("#yy").val() + "/" + $("#mm").val() + "/" + $("#dd").val();
+  var randNum = authn;
   json_data = JSON.stringify({
                 userid : sid,
                 userpw : spw,
@@ -106,9 +113,30 @@ function signup(){
                 username : susername,
                 point : spoint,
                 birth : sbirth,
+                randNum : randNum,
               })
 
+if($("#auth").val() != randNum) alert('인증번호를 다시 입력해주세요.');
 console.log(json_data);
+
+$.ajax({
+          type: 'POST',
+          url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/setSignUp",
+          contentType: 'application/json; charset=utf-8',
+          traditional: true,
+          async: false,
+          data: json_data,
+          success: function (data) {
+              console.log(data);
+
+          },
+          error: function (xhr) {
+              console.log (data);
+
+          }
+      });
+
+
 
 }
 
