@@ -34,6 +34,19 @@ def getConnection():
     return pymysql.connect(host='54.244.72.128', user='root', password='1234',
                            db='InterviewNet', charset='utf8')
 
+@app.route('/setSignUp', methods=['POST'])
+def setSign():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    print (jsonObj)
+    sql = "insert into Member(userid, userpw, city, college, major, town, nickname, username, point, birth, randNum) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    curs.execute(sql,(jsonObj["userid"], jsonObj["userpw"], jsonObj["city"], jsonObj["college"], jsonObj["major"], jsonObj["town"], jsonObj["nickname"], jsonObj["point"], jsonObj["birth"], jsonObj["randNum"]))
+    conn.commit()
+    print ("setSignUp success")
+    conn.close()
+    return redirect(url_for('main'))
+
 @app.route('/sign_up')
 def sign_up():
     return render_template("signup.html")
