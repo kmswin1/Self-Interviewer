@@ -2,6 +2,7 @@ var collist;
 var citlist;
 var towlist;
 var authn;
+var semail;
 collegelist();
 citylist();
 townlist();
@@ -12,6 +13,31 @@ for(var i = 0; i < collist.length; i++)
   myHTMLStr+='<option value="' + collist[i] + '">'+ collist[i] + '</option>'
 var col_list = document.getElementById('college_list');
 col_list.innerHTML = myHTMLStr;
+
+function emailupdate(){
+  return $("#emailad").val();
+}
+
+var addr;
+const changeEmailAdressToKU2 = () => {
+    emailupdate();
+    if (document.getElementById('college_list').value == 'korea, 고려대학교') {
+    document.getElementById('emailaddress').value = 'korea.ac.kr'
+    document.getElementById('emailaddress').disabled = true;
+
+} else {
+  document.getElementById('emailaddress').value = ''
+  document.getElementById('emailaddress').disabled = false;
+}
+}
+
+var myHTMLStr4 = '';
+
+
+
+
+var city_list = document.getElementById('city_list')
+city_list.innerHTML = myHTMLStr2;
 
 var myHTMLStr2 = '<option>★ㅋㅋ큰 지역 선택ㅋ~ㅋㅋ★</option>';
 for(var i = 0; i < citlist.length; i++)
@@ -79,12 +105,24 @@ function update(cityvalue){
     town_list.innerHTML = myHTMLStr3;
 }
 
+function checkid(){
+  if($("#id").val() == 123123) alert("아이디가 중복되었습니다.");
+}
+
+function checknickname(){
+  if($("#nickname").val() == 123123) alert("닉네임이 중복되었습니다.");
+}
+
 function random(){
   var authNum;
   authNum = Math.floor(Math.random() * 10000000) + 1;
   console.log(authNum);
   authn = authNum;
+  semail = $("#emailad").val() + '@' + $("#emailaddress").val();
+  console.log(semail);
 }
+
+
 
 function signup(){
   if(pw1.value.length == 0) alert("비밀번호를 입력해주세요.");
@@ -95,7 +133,7 @@ function signup(){
   var spw = $("#pw1").val();
   var scity = $("#city_list").val();
   var scolloege = $("#college_list").val();
-  var smajor = $("#college_list").val();
+  var smajor = $("#smajor").val();
   var stown = $("#town_list").val();
   var snickname = $("#nickname").val();
   var susername = $("#name").val();
@@ -107,6 +145,7 @@ function signup(){
                 userpw : spw,
                 city : scity,
                 college : scolloege,
+                email : semail,
                 major : smajor,
                 town : stown,
                 nickname : snickname,
@@ -115,7 +154,7 @@ function signup(){
                 birth : sbirth,
                 randNum : randNum,
               })
-
+console.log(semail);
 if($("#auth").val() != randNum) alert('인증번호를 다시 입력해주세요.');
 console.log(json_data);
 

@@ -200,3 +200,13 @@ footer p {
 #btn1 {
 	//color: black;
 }
+
+#id, #nickname {
+  display: inline-block;
+  width: 80%;
+}
+
+#emailaddress, #emailad {
+  display: inline-block;
+  width: 35%;
+}
