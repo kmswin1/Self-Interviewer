@@ -206,7 +206,14 @@ footer p {
   width: 80%;
 }
 
+#mypagebtn, #loginbtn, #signupbtn{
+  display: inline-block;
+  
+}
+
+
 #emailaddress, #emailad {
   display: inline-block;
   width: 35%;
+  line-height: normal;
 }
