@@ -1,3 +1,4 @@
+
 var collist;
 var citlist;
 var towlist;
@@ -120,6 +121,14 @@ function random(){
   authn = authNum;
   semail = $("#emailad").val() + '@' + $("#emailaddress").val();
   console.log(semail);
+
+	Email.send("interviewnet.team1@gmail.com",//보내는 이메일 계정
+					""+semail+"",//받는 이메일 계정
+					"InterviewNet 인증코드 발송메일입니다.",
+					"인증코드는 " + authNum + "입니다. 회원가입 페이지에 인증번호에 입력하시면 됩니다. 소프트웨어공학 1조 화이팅!",
+					"smtp.gmail.com",//네이버 smtp
+					"interviewnet.team1",//네이버 아이디
+					"selfinterview!");
 }
 
 
