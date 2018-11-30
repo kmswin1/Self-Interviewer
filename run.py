@@ -63,6 +63,45 @@ def logOut():
     session.pop('userid', None)
     return redirect(url_for('/'))
 
+@app.route('/idExist')
+def idExist():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    getId = jsonObj["userid"]
+    print (jsonObj)
+    sql = "select id from Member"
+    id = curs.fetchall()
+    result = "true"
+    for i in id:
+        if getId == i:
+            result = "false"
+            result = json.dumps(result)
+            return result
+    conn.commit()
+    conn.close()
+    result = json.dumps(result)
+    return result
+
+@app.route('nickExist')
+def nickExist():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    getNickname = jsonObj["nickname"]
+    print (jsonObj)
+    sql = "select nickname from Member"
+    nickname = curs.fetchall()
+    result = "true"
+    for i in nickname:
+        if getNickname == i:
+            result = "false"
+            result = json.dumps(result)
+            return result
+    conn.commit()
+    conn.close()
+    return result
+
 @app.route('/setSignUp', methods=['POST'])
 def setSignUp():
     conn = getConnection()
@@ -70,7 +109,7 @@ def setSignUp():
     jsonObj = request.get_json()
     print (jsonObj)
     sql = "insert into Member(userid, userpw, city, college, major, town, nickname, username, point, birth, randNum) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-    curs.execute(sql,(jsonObj["userid"], jsonObj["userpw"], jsonObj["city"], jsonObj["college"], jsonObj["major"], jsonObj["town"], jsonObj["nickname"], jsonObj["point"], jsonObj["birth"], jsonObj["randNum"]))
+    curs.execute(sql,(jsonObj["userid"], jsonObj["userpw"], jsonObj["city"], jsonObj["college"], jsonObj["major"], jsonObj["town"], jsonObj["nickname"], jsonObj["username"], jsonObj["point"], jsonObj["birth"], jsonObj["randNum"]))
     conn.commit()
     print ("setSignUp success")
     conn.close()
