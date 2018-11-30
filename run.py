@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, session, escape
 from flask_cors import CORS
 import json
 import pymysql
@@ -34,8 +34,37 @@ def getConnection():
     return pymysql.connect(host='54.244.72.128', user='root', password='1234',
                            db='InterviewNet', charset='utf8')
 
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # session key
+
+@app.route('/signIn')
+def signIn():
+    render_template('signin.html')
+
+@app.route('/logIn', methods=['GET','POST'])
+def logIn():
+    if request.method == 'POST':
+        conn = getConnection()
+        curs = conn.cursor(pymysql.cursors.DictCursor)
+        jsonObj = request.get_json()
+        sql = "select userpw from Member where userid = %s"
+        curs.execute(sql, (jsonObj["userid"]))
+        result = curs.fetchone()
+        conn.commit()
+        print("getUserPW success")
+        if result == jsonObj["userpw"]:
+            session['userid'] = jsonObj["userid"]
+            return redirect(url_for('/'))
+    return redirect(url_for('/'))
+
+
+@app.route('/logOut')
+def logOut():
+    # remove the username from the session if its there
+    session.pop('userid', None)
+    return redirect(url_for('/'))
+
 @app.route('/setSignUp', methods=['POST'])
-def setSign():
+def setSignUp():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
     jsonObj = request.get_json()
@@ -45,7 +74,7 @@ def setSign():
     conn.commit()
     print ("setSignUp success")
     conn.close()
-    return redirect(url_for('main'))
+    return redirect(url_for('/'))
 
 @app.route('/sign_up')
 def sign_up():
@@ -53,6 +82,8 @@ def sign_up():
 
 @app.route('/')
 def main():
+    if 'userid' in session:
+        return 'Logged in as %s' % escape(session['userid'])
     return render_template("main.html")
 
 
