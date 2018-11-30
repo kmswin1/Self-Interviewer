@@ -107,11 +107,60 @@ function update(cityvalue){
 }
 
 function checkid(){
-  if($("#id").val() == 123123) alert("아이디가 중복되었습니다.");
+  var sid = $("#id").val();
+  console.log('일단 시도!');
+  var check;
+  json_data2 = JSON.stringify({
+                userid : sid,
+              })
+
+              $.ajax({
+                        type: 'POST',
+                        url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/idExist",
+                        contentType: 'application/json; charset=utf-8',
+                        traditional: true,
+                        async: false,
+                        data: json_data2,
+                        success: function (data) {
+                            console.log(data);
+                            console.log('성공');
+                            check = data;
+                        },
+                        error: function (xhr) {
+                            console.log (data);
+
+                        }
+                    });
+if(check) alert("중복ㅋㅋㅋ")
 }
 
 function checknickname(){
-  if($("#nickname").val() == 123123) alert("닉네임이 중복되었습니다.");
+  var nickname = $("#nickname").val();
+  var check;
+  console.log('닉네입 중복체크ㅋㅋ일단 시도!');
+
+  json_data3 = JSON.stringify({
+                nickname : snickname,
+              })
+
+              $.ajax({
+                        type: 'POST',
+                        url: "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/nickExist",
+                        contentType: 'application/json; charset=utf-8',
+                        traditional: true,
+                        async: false,
+                        data: json_data3,
+                        success: function (data) {
+                            console.log(data);
+                            console.log('성공');
+                            check = data;
+                        },
+                        error: function (xhr) {
+                            console.log (data);
+
+                        }
+                    });
+                    if(check) alert("중복되었습니다");
 }
 
 function random(){
@@ -145,10 +194,11 @@ function signup(){
   var smajor = $("#smajor").val();
   var stown = $("#town_list").val();
   var snickname = $("#nickname").val();
-  var susername = $("#name").val();
+  var susername = $("#sname").val();
   var spoint = 0;
   var sbirth = $("#yy").val() + "/" + $("#mm").val() + "/" + $("#dd").val();
   var randNum = authn;
+  console.log(susername);
   json_data = JSON.stringify({
                 userid : sid,
                 userpw : spw,
