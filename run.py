@@ -83,7 +83,7 @@ def idExist():
     result = json.dumps(result)
     return result
 
-@app.route('nickExist')
+@app.route('/nickExist')
 def nickExist():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
