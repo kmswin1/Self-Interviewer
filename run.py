@@ -63,7 +63,7 @@ def logOut():
     session.pop('userid', None)
     return redirect(url_for('/'))
 
-@app.route('/idExist')
+@app.route('/idExist', methods=['GET'])
 def idExist():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
@@ -83,7 +83,7 @@ def idExist():
     result = json.dumps(result)
     return result
 
-@app.route('/nickExist')
+@app.route('/nickExist', methods=['GET'])
 def nickExist():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
