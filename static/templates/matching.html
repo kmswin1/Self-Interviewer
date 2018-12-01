@@ -30,137 +30,137 @@
 
 <body>
 
-  <a div class="brand" href="index.html">InterviewNet</a>
-  <div class="address-bar">소프트웨어 팀프로젝트 1팀</div>
+<a div class="brand" href="index.html">InterviewNet</a>
+<div class="address-bar">소프트웨어 팀프로젝트 1팀</div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="{{ url_for('index') }}">Business Casual</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="main.html"> Main</a>
-                    </li>
-                    <li>
-                        <a href="question.html">직종별 질문</a>
-                    </li>
-                    <li>
-                        <a href="matching.html">매칭 시스템</a>
-                    </li>
-                    <li>
-                        <a href="studyroom.html">스터디룸 예약</a>
-                    </li>
-                    <li>
-                        <a href="community.html">Community</a>
-                    </li>
-                    <li>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!--매칭 사용자 등록-->
+<!-- Navigation -->
+<nav class="navbar navbar-default" role="navigation">
     <div class="container">
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <p class="text-center">다른 사용자에게 나를 알리세요!</p>
-                    <hr>
-                </div>
-
-                <label>이름(로그인 기능 구현 전까지는 직접 입력)</label>
-                <br>
-                <input class="input-group-lg" type="text" id="user_name_set">
-                <br>
-                <br>
-                <label>희망 지역</label>
-                <select class="form-control col-lg-3" id="sel_location"><option>직종 선택</option></select>
-                <br>
-                <br>
-                <label>지원 기업</label>
-                <select class="form-control col-lg-3" id="sel_company"><option>직종 선택</option></select>
-                <br>
-                <label>직종</label>
-                <select class="form-control col-lg-3" id="sel_major"><option>직종 선택</option></select>
-                <br>
-                <label>한마디</label>
-                <br>
-                <input class="input-group-lg" type="text" id="user_info_set">
-                <br>
-                <button type="button" class="btn-group-lg btn-lg center-block" onclick="matchingSearch()">사용자 등록</button>
-
-            </div>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+            <a class="navbar-brand" href="{{ url_for('index') }}">Business Casual</a>
         </div>
-    </div>
-
-    <!--매칭 사용자 찾기-->
-    <div class="container">
-        <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <p class="text-center">원하는 지역과 직종을 선택하고, 동일 직종 사용자를 찾아보세요!</p>
-                    <hr>
-                </div>
-                <br>
-                <!--<button type="button-right" class="btn-group-lg btn-lg col-lg-3">등록</button>-->
-                <label>지원 기업</label>
-                <select class="form-control col-lg-3" id="sel_company"><option>기업 선택</option></select>
-                <br>
-                <label>직종</label>
-                <select class="form-control col-lg-3" id="sel_major"><option>직종 선택</option></select>
-                <br>
-                <label>희망 지역</label>
-                <select class="form-control col-lg-3" id="sel_location"><option>지역 선택</option></select>
-                <br>
-                <button type="button" class="btn-group-lg btn-lg center-block" onclick="matchingSearch()">매칭 찾기</button>
-                <div class="clearfix"></div>
-            </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="main.html"> Main</a>
+                </li>
+                <li>
+                    <a href="question.html">직종별 질문</a>
+                </li>
+                <li>
+                    <a href="matching.html">매칭 시스템</a>
+                </li>
+                <li>
+                    <a href="studyroom.html">스터디룸 예약</a>
+                </li>
+                <li>
+                    <a href="community.html">Community</a>
+                </li>
+                <li>
+                </li>
+            </ul>
         </div>
-
-        <!--사용자 카드뷰-->
-        <div class="row">
-            <div class="card_box" id="user_card">
-                <div class="clearfix"></div>
-            </div>
-        </div>
+        <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
+</nav>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; 소프트웨어 공학 1조</p>
-                </div>
+<!--매칭 사용자 등록-->
+<div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <p class="text-center">다른 사용자에게 나를 알리세요!</p>
+                <hr>
+            </div>
+            <br>
+            <label>이름(로그인 기능 구현 전까지는 직접 입력)</label>
+            <br>
+            <input class="input-group-lg" type="text" id="user_name_set">
+            <br>
+            <br>
+            <label>희망 지역</label>
+            <select class="form-control col-lg-3" id="sel_location_set"><option>직종 선택</option></select>
+            <br>
+            <br>
+            <label>지원 기업</label>
+            <select class="form-control col-lg-3" id="sel_company_set"><option>기업 선택</option></select>
+            <br>
+            <label>직종</label>
+            <select class="form-control col-lg-3" id="sel_major_set"><option>직종 선택</option></select>
+            <br>
+            <label>한마디</label>
+            <br>
+            <input class="input-group-lg" type="text" id="user_info_set">
+            <br>
+            <br>
+            <button type="button" class="btn-group-lg btn-lg center-block" onclick="setMemeber()">사용자 등록</button>
+        </div>
+    </div>
+</div>
+
+<!--매칭 사용자 찾기-->
+<div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <p class="text-center">원하는 지역과 직종을 선택하고, 동일 직종 사용자를 찾아보세요!</p>
+                <hr>
+            </div>
+            <br>
+            <!--<button type="button-right" class="btn-group-lg btn-lg col-lg-3">등록</button>-->
+            <label>지원 기업</label>
+            <select class="form-control col-lg-3" id="sel_company"><option>기업 선택</option></select>
+            <br>
+            <label>직종</label>
+            <select class="form-control col-lg-3" id="sel_major"><option>직종 선택</option></select>
+            <br>
+            <label>스터디 희망 지역</label>
+            <select class="form-control col-lg-3" id="sel_location"><option>지역 선택</option></select>
+            <br>
+            <button type="button" class="btn-group-lg btn-lg center-block" onclick="matchingSearch()">매칭 찾기</button>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <!--사용자 카드뷰-->
+    <div class="row">
+        <div class="card_box" id="user_card">
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p>Copyright &copy; 소프트웨어 공학 1조</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
+<!-- jQuery -->
+<script src="../js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>
 
-    <!-- my javascript -->
-    <script type="text/javascript" src="../js/matching.js"></script>
+<!-- my javascript -->
+<script type="text/javascript" src="../js/matching.js"></script>
 </body>
 
 </html>
