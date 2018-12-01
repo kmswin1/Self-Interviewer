@@ -6,9 +6,9 @@ var companyJsonArr = [
     {"company":"삼성SDS"},
     {"company":"LG전자"},
     {"company":"LG화학"},
-    {"company":"인터파크"},
-    {"company":"기아자동차"},
-    {"company":"대우건설"},
+    {"company":"라인"},
+    {"company":"SKT"},
+    {"company":"네이버"},
     {"company":"한국전력공사"}
 ];
 var majorJsonArr = [
@@ -20,12 +20,26 @@ var majorJsonArr = [
     {"major":"영업"}
 ];
 var locationJsonArr = [
-    {"location":"고양시 행신동"},
-    {"location":"서울특별시 제기동"},
-    {"location":"서울특별시 안암동"},
+    {"location":"서울특별시 강남구"},
+    {"location":"서울특별시 성북구"},
+    {"location":"서울특별시 서초구"},
     {"location":"서울특별시 마포구"},
+    {"location":"서울특별시 서대문구"},
+    {"location":"서울특별시 강서구"},
+    {"location":"서울특별시 영등포구"},
+    {"location":"서울특별시 광진구"},
+    {"location":"서울특별시 송파구"},
+    {"location":"서울특별시 동작구"},
+    {"location":"서울특별시 구로구"},
+    {"location":"서울특별시 양천구"},
+    {"location":"서울특별시 강북구"},
+    {"location":"서울특별시 금천구"},
+    {"location":"서울특별시 강북구"},
+    {"location":"서울특별시 종로구"},
+    {"location":"서울특별시 강동구"},
+    {"location":"서울특별시 동대문구"},
     {"location":"수원시 인계동"},
-    {"location":"파주시 금촌동"}
+    {"location":"고양시 행신동"}
 ];
 
 var selectCompany = document.getElementById('sel_company');
@@ -42,6 +56,10 @@ for(var i = 0; i < majorJsonArr.length; i++) {
 }
 for(var i = 0; i < locationJsonArr.length; i++) {
     selectLocation.innerHTML += '<option>' + locationJsonArr[i]['location'] + '</option>';
+}
+
+fun setMemberInfo() {
+
 }
 
 /**
@@ -80,15 +98,19 @@ function matchingSearch() {
         }
     });
 
+    drawCard(userJsonArr)
+}
+
+function drawCard(jsonData) {
     // 요청(PUT) 결과를 카드뷰로 그리기
     var myHTML = '';
-    for(i = 0; i < userJsonArr.length; i++) {
+    for(i = 0; i < jsonData.length; i++) {
         myHTML += '<div class="card">' +
             '<img src="../resources/img_avatar.png">' +
             '<div class="container2">' +
-            '<h4><b>' + userJsonArr[i]['username'] + '</b></h4>' +
-            '<p>' + userJsonArr[i]['city'] + ' ' + userJsonArr[i]['town'] + '</p>' +
-            '<p>' + userJsonArr[i]['userInfo'] + '</p>' +
+            '<h4><b>' + jsonData[i]['username'] + '</b></h4>' +
+            '<p>' + jsonData[i]['city'] + ' ' + jsonData[i]['town'] + '</p>' +
+            '<p>' + jsonData[i]['userInfo'] + '</p>' +
             '</div>' +
             '</div>';
     }
