@@ -73,7 +73,7 @@ def idExist():
     sql = "select id from Member where id = %s"
     curs.execute(sql,(getId))
     id = curs.fetchall()
-    print (id)
+    print (len(id))
     result = 1 # true
     if len(id) != 0:
         result = 0 # false
@@ -94,7 +94,7 @@ def nickExist():
     sql = "select nickname from Member where nickname = %s"
     curs.execute(sql,(getNickname))
     nickname = curs.fetchall()
-    print (nickname)
+    print (len(nickname))
     result = 1 # true
     if len(nickname) != 0:
         result = 0 # false
