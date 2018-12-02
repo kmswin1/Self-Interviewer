@@ -124,7 +124,7 @@ function checkid(){
                         success: function (data) {
                             console.log(data);
                             console.log('성공');
-                            check = parsInt(data);
+                            check = parseInt(data);
                         },
                         error: function (xhr) {
                             console.log (data);
