@@ -84,6 +84,8 @@ hr {
     background: rgba(255,255,255,0.9);
 }
 
+
+
 .intro-text {
     text-transform: uppercase;
     font-size: 1.25em;
@@ -201,6 +203,58 @@ footer p {
 	//color: black;
 }
 
+/* mathcing.html 사용자 카드뷰*/
+.card_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 30px 15px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    width: 300px;
+    height: auto;
+    /*float: left;*/
+    margin: 20px;
+    background-color: white;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container2 {
+    padding: 2px 16px;
+    text-align: center;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+    border-radius: 5px 5px 0 0;
+    height: auto;
+    width: 300px;
+}
+
+
+#pageselect {
+	list-style: none;
+	text-align: center;
+  color: black;
+}
+
+#btn1 {
+	//color: black;
+}
+
 #id, #nickname {
   display: inline-block;
   width: 80%;
@@ -208,7 +262,7 @@ footer p {
 
 #mypagebtn, #loginbtn, #signupbtn{
   display: inline-block;
-  
+
 }
 
 

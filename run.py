@@ -1,123 +1,5 @@
-<<<<<<< HEAD
 from flask import Flask
-from flask import render_template, request, redirect, url_for
-from flask_cors import CORS
-import json
-import pymysql
-app = Flask(__name__, template_folder='static/templates')
-
-# <------ error hander---------->
-
-@app.errorhandler(500)
-def internal_error(error):
-
-    return "500 error"
-
-@app.errorhandler(404)
-def not_found(error):
-    return "404 error",404
-
-#<------------------------------>
-
-#<--------cors permission settins----------->
-
-cors = CORS(app, resources={
-  r"/*": {"origin": "*"},
-})
-
-#<------------------------------------------>
-def getConnection():
-    return pymysql.connect(host='54.244.72.128', user='root', password='1234',
-                           db='InterviewNet', charset='utf8')
-
-@app.route('/signin')
-def sign_in(userid):
-    error = None
-#    if request.method == 'POST':
- #       if valid_login(request.form['userid'],
-  #                     request.form['userpw']):
-   #         return log_the_user_in(request.form['userid'])
-    #    else:
-     #       error = 'Invalid user id/password'
-    return render_template('signin.html', error=error)
-
-@app.route('/')
-def main():
-    return render_template("main.html")
-
-@app.route('/question')
-def question():
-    return render_template("question.html")
-
-@app.route('/matching')
-def matching():
-    return render_template("matching.html")
-
-@app.route('/studyroom')
-def studyroom():
-    return render_template("studyroom.html")
-
-@app.route('/community')
-def community():
-    return render_template("community.html")
-
-@app.route('/write')
-def write():
-    return render_template("write.html")
-
-@app.route('/index')
-def index():
-    return render_template("index.html")
-
-@app.route('/mypage')
-def mypage():
-    return render_template("mypage.html")
-
-@app.route('/getInfo', methods=['GET'])
-def getInfo():
-    conn = getConnection()
-    curs = conn.cursor(pymysql.cursors.DictCursor)
-    sql = "select * from Info"
-    curs.execute(sql)
-    conn.commit()
-    results = curs.fetchall()
-    jsonObj = json.dumps(results)
-    print ("getInfo success")
-    conn.close()
-    return jsonObj
-
-@app.route('/writeInfo', methods=['POST'])
-def writeInfo():
-    conn = getConnection()
-    curs = conn.cursor(pymysql.cursors.DictCursor)
-    jsonObj = request.get_json()
-
-    print (jsonObj)
-    sql = "insert into Info(author, title, text, time, hit) values(%s, %s, %s, %s, %s)"
-    curs.execute(sql, (jsonObj["sid"], jsonObj["stitle"], jsonObj["stext"], jsonObj["stime"], jsonObj["sview"]))
-    conn.commit()
-    print ("writeInfo success")
-    conn.close()
-    return redirect(url_for('community'))
-
-
-@app.route('/reviseInfo', methods=['PUT'])
-def reviseInfo():
-    conn = getConnection()
-    curs = conn.cursor(pymysql.cursors.DictCursor)
-    return 1
-
-@app.route('/delInfo', methods=['DELETE'])
-def delInfo():
-    conn = getConnection()
-    curs = conn.cursor(pymysql.cursors.DictCursor)
-    return 1
-
-if __name__ == '__main__':
-  app.run(host='0.0.0.0', debug=True)
-=======
-from flask import Flask
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, session, escape
 from flask_cors import CORS
 import json
 import pymysql
@@ -152,20 +34,94 @@ def getConnection():
     return pymysql.connect(host='54.244.72.128', user='root', password='1234',
                            db='InterviewNet', charset='utf8')
 
-@app.route('/signin')
-def sign_in(userid):
-    error = None
-#    if request.method == 'POST':
- #       if valid_login(request.form['userid'],
-  #                     request.form['userpw']):
-   #         return log_the_user_in(request.form['userid'])
-    #    else:
-     #       error = 'Invalid user id/password'
-    return render_template("signin.html", error=error)
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # session key
+
+@app.route('/signIn')
+def signIn():
+    render_template('signin.html')
+
+@app.route('/logIn', methods=['GET','POST'])
+def logIn():
+    if request.method == 'POST':
+        conn = getConnection()
+        curs = conn.cursor(pymysql.cursors.DictCursor)
+        jsonObj = request.get_json()
+        sql = "select userpw from Member where userid = %s"
+        curs.execute(sql, (jsonObj["userid"]))
+        result = curs.fetchone()
+        conn.commit()
+        print("getUserPW success")
+        if result == jsonObj["userpw"]:
+            session['userid'] = jsonObj["userid"]
+            return redirect(url_for('/index'))
+    return redirect(url_for('/index'))
+
+
+@app.route('/logOut')
+def logOut():
+    # remove the username from the session if its there
+    session.pop('userid', None)
+    return redirect(url_for('/'))
+
+@app.route('/idExist', methods=['POST'])
+def idExist():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    getId = jsonObj["userid"]
+    print (jsonObj)
+    sql = "select id from Member"
+    id = curs.fetchall()
+    result = 1 # true
+    if id.count() != 0:
+        result = 0 # false
+        result = json.dumps(result)
+        return result
+    conn.commit()
+    conn.close()
+    result = json.dumps(result)
+    return result
+
+@app.route('/nickExist', methods=['POST'])
+def nickExist():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    getNickname = jsonObj["nickname"]
+    print (jsonObj)
+    sql = "select nickname from Member"
+    nickname = curs.fetchall()
+    result = 1 # true
+    if nickname.count() != 0:
+        result = 0 # false
+        result = json.dumps(result)
+        return result
+    conn.commit()
+    conn.close()
+    return result
+
+@app.route('/setSignUp', methods=['POST'])
+def setSignUp():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    print (jsonObj)
+    sql = "insert into Member(userid, userpw, city, college, major, town, nickname, username, point, birth, randNum) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    curs.execute(sql,(jsonObj["userid"], jsonObj["userpw"], jsonObj["city"], jsonObj["college"], jsonObj["major"], jsonObj["town"], jsonObj["nickname"], jsonObj["username"], jsonObj["point"], jsonObj["birth"], jsonObj["randNum"]))
+    conn.commit()
+    print ("setSignUp success")
+    conn.close()
+    return redirect(url_for('/index'))
+
+@app.route('/sign_up')
+def sign_up():
+    return render_template("signup.html")
 
 @app.route('/')
 def main():
-    return render_template("signin.html")
+    if 'userid' in session:
+        return 'Logged in as %s' % escape(session['userid'])
+    return render_template("main.html")
 
 
 @app.route('/sendQuestionOption', methods = ['PUT'])
@@ -201,7 +157,7 @@ def getMemberInfo():
     curs = conn.cursor(pymysql.cursors.DictCursor)
     jsonObj = request.get_json()
     print (jsonObj)
-    sql = "select * from Member where company = %s and city = %s and town = %s and major = %s"
+    sql = "select * from Matching where company = %s and city = %s and town = %s and major = %s"
     curs.execute(sql,(jsonObj["company"], jsonObj["city"], jsonObj["town"], jsonObj["major"]))
     results = curs.fetchall()
     jsonObj = json.dumps(results)
@@ -329,17 +285,16 @@ def sendEmail():
     smtp.ehlo()  # say Hello
     smtp.starttls()  # TLS 사용시 필요
     collegeMail = ''
-    mailId = ''
-    smtp.login('kmswin7@gmail.com', 'qhdwka12')
+    id = ''
+    smtp.login('kmswin7@gmail.com', '1234')
 
     msg = MIMEText('본문 테스트 메시지')
     msg['Subject'] = '테스트'
-    msg['To'] = mailId+'@'+collegeMail
-    smtp.sendmail('kmswin7@gmail.com', mailId+'@'+collegeMail , msg.as_string())
+    msg['To'] = id+'@'+collegeMail
+    smtp.sendmail('kmswin7@gmail.com', id+'@'+collegeMail , msg.as_string())
 
     smtp.quit()
 
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
->>>>>>> b1c0ae55829bd0ed1b9746eae5e5a9eb81c48c38

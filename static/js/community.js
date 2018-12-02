@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var data;
 var jsonArray;
 var select;
@@ -104,7 +103,7 @@ function paging(page){
   var table = document.getElementById('tableOutput')
   table.innerHTML = myHTMLStr;
 }
-=======
+
 var data;
 var jsonArray;
 var select;
@@ -208,4 +207,3 @@ function paging(page){
   var table = document.getElementById('tableOutput')
   table.innerHTML = myHTMLStr;
 }
->>>>>>> b1c0ae55829bd0ed1b9746eae5e5a9eb81c48c38
