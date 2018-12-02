@@ -10,7 +10,7 @@ function slogin(){
               })
   $.ajax({
     type : "POST",
-    url : "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/login",
+    url : "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/logIn",
     contentType: 'application/json; charset=utf-8',
     traditional: true,
     async: false,
