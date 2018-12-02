@@ -70,8 +70,8 @@ def idExist():
     jsonObj = request.get_json()
     getId = jsonObj["userid"]
     print (jsonObj)
-    sql = "select id from Member"
-    curs.execute(sql)
+    sql = "select id from Member where id = %s"
+    curs.execute(sql,(getId))
     id = curs.fetchall()
     result = 1 # true
     if len(id) != 0:
@@ -90,8 +90,8 @@ def nickExist():
     jsonObj = request.get_json()
     getNickname = jsonObj["nickname"]
     print (jsonObj)
-    sql = "select nickname from Member"
-    curs.execute(sql)
+    sql = "select nickname from Member where nickname = %s"
+    curs.execute(sql,(getNickname))
     nickname = curs.fetchall()
     result = 1 # true
     if len(nickname) != 0:
