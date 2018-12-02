@@ -5,8 +5,8 @@ function slogin(){
   var spw = $("#loginpw").val();
   console.log(sid+"  "+spw);
   var login_json_data = JSON.stringify({
-                loginin : sid,
-                loginpw : spw,
+                userid : sid,
+                userpw : spw,
               })
   $.ajax({
     type : "POST",

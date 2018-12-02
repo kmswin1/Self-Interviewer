@@ -124,7 +124,7 @@ function checkid(){
                         success: function (data) {
                             console.log(data);
                             console.log('성공');
-                            check = data;
+                            check = parsInt(data);
                         },
                         error: function (xhr) {
                             console.log (data);
@@ -153,7 +153,7 @@ function checknickname(){
                         success: function (data) {
                             console.log(data);
                             console.log('성공');
-                            check = data;
+                            check = parseInt(data);
                         },
                         error: function (xhr) {
                             console.log (data);
