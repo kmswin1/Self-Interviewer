@@ -38,7 +38,7 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # session key
 
 @app.route('/signIn')
 def signIn():
-    render_template('signin.html')
+    return render_template('signin.html')
 
 @app.route('/logIn', methods=['GET','POST'])
 def logIn():
