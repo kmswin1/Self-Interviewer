@@ -102,6 +102,7 @@ def nickExist():
         return result
     conn.commit()
     conn.close()
+    result = json.dumps(result)
     return result
 
 @app.route('/setSignUp', methods=['POST'])
