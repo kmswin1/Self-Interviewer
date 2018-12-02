@@ -54,8 +54,8 @@ def logIn():
         print("getUserPW success")
         if result == jsonObj["userpw"]:
             session['userid'] = jsonObj["userid"]
-            return redirect(url_for('/index'))
-    return redirect(url_for('/index'))
+            return redirect(url_for('index'))
+    return redirect(url_for('index'))
 
 
 @app.route('/logOut')
@@ -117,7 +117,7 @@ def setSignUp():
     conn.commit()
     print ("setSignUp success")
     conn.close()
-    return redirect(url_for('/index'))
+    return redirect(url_for('index'))
 
 @app.route('/sign_up')
 def sign_up():
