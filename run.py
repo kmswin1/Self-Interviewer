@@ -72,12 +72,11 @@ def idExist():
     print (jsonObj)
     sql = "select id from Member"
     id = curs.fetchall()
-    result = "true"
-    for i in id:
-        if getId == i:
-            result = "false"
-            result = json.dumps(result)
-            return result
+    result = 1 # true
+    if id.count() != 0:
+        result = 0 # false
+        result = json.dumps(result)
+        return result
     conn.commit()
     conn.close()
     result = json.dumps(result)
@@ -92,12 +91,11 @@ def nickExist():
     print (jsonObj)
     sql = "select nickname from Member"
     nickname = curs.fetchall()
-    result = "true"
-    for i in nickname:
-        if getNickname == i:
-            result = "false"
-            result = json.dumps(result)
-            return result
+    result = 1 # true
+    if nickname.count() != 0:
+        result = 0 # false
+        result = json.dumps(result)
+        return result
     conn.commit()
     conn.close()
     return result
