@@ -74,7 +74,7 @@ def idExist():
     curs.execute(sql)
     id = curs.fetchall()
     result = 1 # true
-    if id.count() != 0:
+    if len(id) != 0:
         result = 0 # false
         result = json.dumps(result)
         return result
@@ -94,7 +94,7 @@ def nickExist():
     curs.execute(sql)
     nickname = curs.fetchall()
     result = 1 # true
-    if nickname.count() != 0:
+    if len(nickname) != 0:
         result = 0 # false
         result = json.dumps(result)
         return result
