@@ -11,9 +11,10 @@
     <title>About - InterviewNet - 면접 준비 프로젝트</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
+
     <!-- Custom CSS -->
-    <link href="../css/business-casual.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/business-casual.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -30,49 +31,54 @@
 
 <body>
 
-<a div class="brand" href="index.html">InterviewNet</a>
-<div class="address-bar">소프트웨어 팀프로젝트 1팀</div>
 
-<!-- Navigation -->
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-            <a class="navbar-brand" href="{{ url_for('index') }}">Business Casual</a>
+  <a div class="brand" href="{{ url_for("index") }}">InterviewNet</a>
+  <div class="address-bar">소프트웨어 팀프로젝트 1팀</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="{{ url_for('index') }}">Business Casual</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{{ url_for("main") }}"> Main</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for("question") }}">직종별 질문</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for("matching") }}">매칭 시스템</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for("studyroom") }}">스터디룸 예약</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for("community") }}">Community</a>
+                    </li>
+                    <li>
+                        <button type="button-right" class="btn btn-info btn-sm"> Sign-in</button>
+                        <input type="button" class="btn btn-info btn-sm" value="Sign-up" onClick="location.href ='{{ url_for("sign_up") }}'">
+                        <input type="button" class="btn btn-info btn-sm" value="MyPage" onClick="location.href ='{{ url_for("mypage") }}'">
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="main.html"> Main</a>
-                </li>
-                <li>
-                    <a href="question.html">직종별 질문</a>
-                </li>
-                <li>
-                    <a href="matching.html">매칭 시스템</a>
-                </li>
-                <li>
-                    <a href="studyroom.html">스터디룸 예약</a>
-                </li>
-                <li>
-                    <a href="community.html">Community</a>
-                </li>
-                <li>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
+        <!-- /.container -->
+    </nav>
+
 
 <!--매칭 사용자 등록-->
 <div class="container">
@@ -106,17 +112,6 @@
             <br>
             <button type="button" class="btn-group-lg btn-lg center-block" onclick="setMemeber()">사용자 등록</button>
         </div>
-    </div>
-</div>
-
-<!--매칭 사용자 찾기-->
-<div class="container">
-    <div class="row">
-        <div class="box">
-            <div class="col-lg-12">
-                <hr>
-                <p class="text-center">원하는 지역과 직종을 선택하고, 동일 직종 사용자를 찾아보세요!</p>
-                <hr>
             </div>
             <br>
             <!--<button type="button-right" class="btn-group-lg btn-lg col-lg-3">등록</button>-->
@@ -132,7 +127,7 @@
             <button type="button" class="btn-group-lg btn-lg center-block" onclick="matchingSearch()">매칭 찾기</button>
             <div class="clearfix"></div>
         </div>
-    </div>
+
 
     <!--사용자 카드뷰-->
     <div class="row">
@@ -153,14 +148,14 @@
     </div>
 </footer>
 
-<!-- jQuery -->
-<script src="../js/jquery.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="../js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename = 'js/jquery.js') }}"></script>
 
-<!-- my javascript -->
-<script type="text/javascript" src="../js/matching.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <link href="{{ url_for('static', filename = 'js/bootstrap.js') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename = 'js/matching.js') }}"></script>
 </body>
 
 </html>

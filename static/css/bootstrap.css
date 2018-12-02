@@ -6754,4 +6754,15 @@ button.close {
     display: none !important;
   }
 }
+
+/* mathcing.html 사용자 카드뷰*/
+.card_box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 30px 15px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
 /*# sourceMappingURL=bootstrap.css.map */
