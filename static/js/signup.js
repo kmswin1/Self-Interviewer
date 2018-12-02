@@ -140,7 +140,7 @@ function checknickname(){
   console.log('닉네입 중복체크ㅋㅋ일단 시도!');
 
   json_data3 = JSON.stringify({
-                nickname : snickname,
+                nickname : nickname,
               })
 
               $.ajax({
