@@ -36,6 +36,10 @@ def getConnection():
 
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # session key
 
+@app.route('/index')
+def index():
+    return render_template("index.html")
+
 @app.route('/signIn')
 def signIn():
     return render_template('signin.html')
@@ -62,7 +66,7 @@ def logIn():
 def logOut():
     # remove the username from the session if its there
     session.pop('userid', None)
-    return redirect(url_for('/'))
+    return redirect(url_for('index'))
 
 @app.route('/idExist', methods=['POST'])
 def idExist():
@@ -198,9 +202,6 @@ def community():
 def write():
     return render_template("write.html")
 
-@app.route('/index')
-def index():
-    return render_template("index.html")
 
 @app.route('/mypage')
 def mypage():
