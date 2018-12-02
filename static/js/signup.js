@@ -244,9 +244,7 @@ $.ajax({
 
           }
       });
-
-
-
+    location.href="http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/"
 }
 
 function collegelist(){
