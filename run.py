@@ -75,7 +75,7 @@ def idExist():
     id = curs.fetchall()
     print (len(id))
     result = 1 # true
-    if len(id) != 0:
+    if len(id) == 0:
         result = 0 # false
         result = json.dumps(result)
         return result
@@ -96,7 +96,7 @@ def nickExist():
     nickname = curs.fetchall()
     print (len(nickname))
     result = 1 # true
-    if len(nickname) != 0:
+    if len(nickname) == 0:
         result = 0 # false
         result = json.dumps(result)
         return result
