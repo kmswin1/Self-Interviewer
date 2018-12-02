@@ -131,7 +131,7 @@ function checkid(){
 
                         }
                     });
-if(check) alert("중복ㅋㅋㅋ")
+if(check === 0) alert("중복ㅋㅋㅋ")
 }
 
 function checknickname(){
@@ -160,7 +160,7 @@ function checknickname(){
 
                         }
                     });
-                    if(check) alert("중복되었습니다");
+                    if(check === 0) alert("중복되었습니다");
 }
 
 function random(){
