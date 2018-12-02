@@ -131,7 +131,9 @@ function checkid(){
 
                         }
                     });
-if(check === 0) alert("중복ㅋㅋㅋ")
+                        if(check === 0) alert("아이디가 이미 존재합니다.")
+                        else alert("사용할 수 있는 아이디 입니다.")
+
 }
 
 function checknickname(){
@@ -160,7 +162,8 @@ function checknickname(){
 
                         }
                     });
-                    if(check === 0) alert("중복되었습니다");
+                    if(check === 0) alert("닉네임이 중복되었습니다");
+                    else alert("사용할 수 있는 닉네임 입니다.")
 }
 
 function random(){
