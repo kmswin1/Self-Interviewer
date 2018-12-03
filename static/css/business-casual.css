@@ -243,3 +243,11 @@ img {
     height: auto;
     width: 300px;
 }
+
+label {
+    margin-bottom: 10px;
+}
+
+select {
+    margin-bottom: 10px;
+}
