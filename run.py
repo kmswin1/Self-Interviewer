@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, session, escape
 from flask_cors import CORS
 import json
 import pymysql
@@ -34,12 +34,95 @@ def getConnection():
     return pymysql.connect(host='54.244.72.128', user='root', password='1234',
                            db='InterviewNet', charset='utf8')
 
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # session key
+
+@app.route('/signIn')
+def signIn():
+    render_template('signin.html')
+
+@app.route('/logIn', methods=['GET','POST'])
+def logIn():
+    if request.method == 'POST':
+        conn = getConnection()
+        curs = conn.cursor(pymysql.cursors.DictCursor)
+        jsonObj = request.get_json()
+        sql = "select userpw from Member where userid = %s"
+        curs.execute(sql, (jsonObj["userid"]))
+        result = curs.fetchone()
+        conn.commit()
+        print("getUserPW success")
+        if result == jsonObj["userpw"]:
+            session['userid'] = jsonObj["userid"]
+            return redirect(url_for('/index'))
+    return redirect(url_for('/index'))
+
+
+@app.route('/logOut')
+def logOut():
+    # remove the username from the session if its there
+    session.pop('userid', None)
+    return redirect(url_for('/'))
+
+@app.route('/idExist', methods=['POST'])
+def idExist():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    getId = jsonObj["userid"]
+    print (jsonObj)
+    sql = "select id from Member"
+    id = curs.fetchall()
+    result = "true"
+    for i in id:
+        if getId == i:
+            result = "false"
+            result = json.dumps(result)
+            return result
+    conn.commit()
+    conn.close()
+    result = json.dumps(result)
+    return result
+
+@app.route('/nickExist', methods=['POST'])
+def nickExist():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    getNickname = jsonObj["nickname"]
+    print (jsonObj)
+    sql = "select nickname from Member"
+    nickname = curs.fetchall()
+    result = "true"
+    for i in nickname:
+        if getNickname == i:
+            result = "false"
+            result = json.dumps(result)
+            return result
+    conn.commit()
+    conn.close()
+    return result
+
+@app.route('/setSignUp', methods=['POST'])
+def setSignUp():
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    jsonObj = request.get_json()
+    print (jsonObj)
+    sql = "insert into Member(userid, userpw, city, college, major, town, nickname, username, point, birth, randNum) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    curs.execute(sql,(jsonObj["userid"], jsonObj["userpw"], jsonObj["city"], jsonObj["college"], jsonObj["major"], jsonObj["town"], jsonObj["nickname"], jsonObj["username"], jsonObj["point"], jsonObj["birth"], jsonObj["randNum"]))
+    conn.commit()
+    print ("setSignUp success")
+    conn.close()
+    return redirect(url_for('/index'))
+
 @app.route('/sign_up')
 def sign_up():
     return render_template("signup.html")
 
 @app.route('/')
 def main():
+    if 'userid' in session:
+        return 'Logged in as %s' % escape(session['userid'])
     return render_template("main.html")
 
 
