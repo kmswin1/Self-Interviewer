@@ -153,7 +153,7 @@ function matchingSearch() {
     // 요청(PUT) 결과를 카드뷰로 그리기
     var myHTML = '';
     for(i = 0; i < userJsonArr.length; i++) {
-        myHTML += '<div class="card" onclick="startChat()">' +
+        myHTML += '<div class="card" onclick=startChat()>' +
             '<img src= "https://www.w3schools.com/howto/img_avatar.png">' +
             '<div class="container2">' +
             '<h4><b>' + userJsonArr[i]['username'] + '</b></h4>' +
@@ -166,5 +166,5 @@ function matchingSearch() {
 }
 
 function startChat() {
-    window.open('../templates/chat_room.html', 'chat_room_popup', 'width=450, height=600');
+    window.open("http://13.209.186.36:3000/", '_blank', 'resizable=yes, width=450, height=600');
 }
