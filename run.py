@@ -56,6 +56,8 @@ def logIn():
         result = json.dumps(result)
         conn.commit()
         print("getUserPW success")
+        print (result)
+        print (jsonObj["userpw"])
         if result == jsonObj["userpw"]:
             session['userid'] = jsonObj["userid"]
             print ("login Success!!")
