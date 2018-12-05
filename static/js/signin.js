@@ -5,12 +5,12 @@ function slogin(){
   var spw = $("#loginpw").val();
   console.log(sid+"  "+spw);
   var login_json_data = JSON.stringify({
-                loginin : sid,
-                loginpw : spw,
+                userid : sid,
+                userpw : spw,
               })
   $.ajax({
     type : "POST",
-    url : "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/login",
+    url : "http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/logIn",
     contentType: 'application/json; charset=utf-8',
     traditional: true,
     async: false,
@@ -23,5 +23,6 @@ function slogin(){
     error: function (xhr) {
         console.log (data);
     }
-});
+    });
+    location.href="http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/index"
 }

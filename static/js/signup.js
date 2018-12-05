@@ -124,14 +124,20 @@ function checkid(){
                         success: function (data) {
                             console.log(data);
                             console.log('성공');
-                            check = data;
+                            check = parseInt(data);
                         },
                         error: function (xhr) {
                             console.log (data);
 
                         }
                     });
-if(check) alert("중복ㅋㅋㅋ")
+                        if(check === 0) {
+                            alert("사용할 수 있는 아이디 입니다.")
+                        }
+                        else if (check === 1) {
+                            alert("아이디가 이미 존재합니다.")
+                        }
+
 }
 
 function checknickname(){
@@ -140,7 +146,7 @@ function checknickname(){
   console.log('닉네입 중복체크ㅋㅋ일단 시도!');
 
   json_data3 = JSON.stringify({
-                nickname : snickname,
+                nickname : nickname,
               })
 
               $.ajax({
@@ -153,14 +159,19 @@ function checknickname(){
                         success: function (data) {
                             console.log(data);
                             console.log('성공');
-                            check = data;
+                            check = parseInt(data);
                         },
                         error: function (xhr) {
                             console.log (data);
 
                         }
                     });
-                    if(check) alert("중복되었습니다");
+                    if(check === 0) {
+                        alert("사용할 수 있는 닉네임 입니다.");
+                    }
+                    else if (check === 1) {
+                        alert("닉네임이 이미 존재합니다.")
+                    }
 }
 
 function random(){
@@ -233,9 +244,7 @@ $.ajax({
 
           }
       });
-
-
-
+    location.href="http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/index"
 }
 
 function collegelist(){
