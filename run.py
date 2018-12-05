@@ -58,7 +58,9 @@ def logIn():
         print("getUserPW success")
         if result == jsonObj["userpw"]:
             session['userid'] = jsonObj["userid"]
+            print ("login Success!!")
             return redirect(url_for('index'))
+    print ("login failed")
     return redirect(url_for('index'))
 
 
