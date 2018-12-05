@@ -137,6 +137,9 @@ def main():
         return 'Logged in as %s' % escape(session['userid'])
     return render_template("main.html")
 
+@app.route('/record')
+def record():
+    return render_template('record.html')
 
 @app.route('/sendQuestionOption', methods = ['PUT'])
 def getQuestion():
