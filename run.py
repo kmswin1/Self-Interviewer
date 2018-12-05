@@ -36,9 +36,13 @@ def getConnection():
 
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # session key
 
+@app.route('/index')
+def index():
+    return render_template("index.html")
+
 @app.route('/signIn')
 def signIn():
-    render_template('signin.html')
+    return render_template('signin.html')
 
 @app.route('/logIn', methods=['GET','POST'])
 def logIn():
@@ -49,19 +53,24 @@ def logIn():
         sql = "select userpw from Member where userid = %s"
         curs.execute(sql, (jsonObj["userid"]))
         result = curs.fetchone()
+        result = int(result["userpw"])
         conn.commit()
         print("getUserPW success")
-        if result == jsonObj["userpw"]:
+        print (result)
+        print (jsonObj["userpw"])
+        if result == int(jsonObj["userpw"]):
             session['userid'] = jsonObj["userid"]
-            return redirect(url_for('/index'))
-    return redirect(url_for('/index'))
+            print ("login Success!!")
+            return redirect(url_for('index'))
+    print ("login failed")
+    return redirect(url_for('index'))
 
 
 @app.route('/logOut')
 def logOut():
     # remove the username from the session if its there
     session.pop('userid', None)
-    return redirect(url_for('/'))
+    return redirect(url_for('index'))
 
 @app.route('/idExist', methods=['POST'])
 def idExist():
@@ -70,10 +79,12 @@ def idExist():
     jsonObj = request.get_json()
     getId = jsonObj["userid"]
     print (jsonObj)
-    sql = "select id from Member"
+    sql = "select userid from Member where userid = %s"
+    curs.execute(sql,(getId))
     id = curs.fetchall()
+    print (len(id))
     result = 1 # true
-    if id.count() != 0:
+    if len(id) == 0:
         result = 0 # false
         result = json.dumps(result)
         return result
@@ -89,15 +100,18 @@ def nickExist():
     jsonObj = request.get_json()
     getNickname = jsonObj["nickname"]
     print (jsonObj)
-    sql = "select nickname from Member"
+    sql = "select nickname from Member where nickname = %s"
+    curs.execute(sql,(getNickname))
     nickname = curs.fetchall()
+    print (len(nickname))
     result = 1 # true
-    if nickname.count() != 0:
+    if len(nickname) == 0:
         result = 0 # false
         result = json.dumps(result)
         return result
     conn.commit()
     conn.close()
+    result = json.dumps(result)
     return result
 
 @app.route('/setSignUp', methods=['POST'])
@@ -111,7 +125,7 @@ def setSignUp():
     conn.commit()
     print ("setSignUp success")
     conn.close()
-    return redirect(url_for('/index'))
+    return redirect(url_for('index'))
 
 @app.route('/sign_up')
 def sign_up():
@@ -192,9 +206,6 @@ def community():
 def write():
     return render_template("write.html")
 
-@app.route('/index')
-def index():
-    return render_template("index.html")
 
 @app.route('/mypage')
 def mypage():
