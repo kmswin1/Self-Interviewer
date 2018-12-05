@@ -53,7 +53,7 @@ def logIn():
         sql = "select userpw from Member where userid = %s"
         curs.execute(sql, (jsonObj["userid"]))
         result = curs.fetchone()
-        result = json.dumps(result["userpw"])
+        result = int(result["userpw"])
         conn.commit()
         print("getUserPW success")
         print (result)
