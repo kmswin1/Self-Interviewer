@@ -183,7 +183,6 @@ footer p {
         table-layout: fixed;
         font-size: 1.25em;
     }
-}
 
 @media screen and (min-width:1200px) {
     .box:after {
@@ -250,4 +249,31 @@ label {
 
 select {
     margin-bottom: 10px;
+}
+
+#pageselect {
+	list-style: none;
+	text-align: center;
+  color: black;
+}
+
+#btn1 {
+	//color: black;
+}
+
+#id, #nickname {
+  display: inline-block;
+  width: 80%;
+}
+
+#mypagebtn, #loginbtn, #signupbtn{
+  display: inline-block;
+
+}
+
+
+#emailaddress, #emailad {
+  display: inline-block;
+  width: 35%;
+  line-height: normal;
 }

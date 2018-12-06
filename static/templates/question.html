@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Contact - Business Casual - Start Bootstrap Theme</title>
+    <title>InterviewNet - 면접 준비 프로젝트</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet">
@@ -67,7 +67,7 @@
                         <a href="{{ url_for("community") }}">Community</a>
                     </li>
                     <li>
-                        <button type="button-right" class="btn btn-info btn-sm"> Sign-in</button>
+                        <input type="button" class="btn btn-info btn-sm" value="Sign-in" onClick="location.href ='{{ url_for("signIn") }}'">
                         <input type="button" class="btn btn-info btn-sm" value="Sign-up" onClick="location.href ='{{ url_for("sign_up") }}'">
                         <input type="button" class="btn btn-info btn-sm" value="MyPage" onClick="location.href ='{{ url_for("mypage") }}'">
                     </li>
@@ -188,7 +188,8 @@
 
                                 <br><br><center>
                                 <input type="hidden" name="save" value="contact">
-                                <button id="submit_btn" type="button" onclick="sendSelectValue()" class="btn btn-default">질문 보기</button></center>
+                                <button id="submit_btn" type="button" onclick="sendSelectValue()" class="btn btn-default">질문 보기</button>
+                                <button id="mockInterview" type="button" onclick="window.open('http://ec2-54-244-72-128.us-west-2.compute.amazonaws.com:5000/record')" class="btn btn-primary">모의 면접 시작</button></center>
                                 <br><br>
 
                               </div>
@@ -291,7 +292,7 @@
 
 
     <!-- Bootstrap Core JavaScript -->
-    <link href="{{ url_for('static', filename = 'js/bootstrap.js') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename = 'css/bootstrap.css') }}" rel="stylesheet">
 
 </body>
 
