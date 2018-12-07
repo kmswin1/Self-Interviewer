@@ -334,7 +334,32 @@ def startInterview():
     print ("getQuestions success")
     conn.close()
     curQuestion = g_result[idx]["question"]
-    json_Obj['action']['parameters']["question"]["value"] = curQuestion
+    json_Obj = {
+    "version": "2.0",
+    "resultCode": "OK",
+    "output": {
+        'major': {'type': 'MAJOR', 'value': 'SW'}, 'company': {'type': 'COMPANY', 'value': 'SKT'},
+        'question': {'type': 'QUESTION', 'value': curQuestion}
+    },
+    "directives": [
+      {
+        "type": "AudioPlayer.Play",
+        "audioItem": {
+            "stream": {
+                "url": "{{STRING}}",
+                "offsetInMilliseconds": 600,
+                "progressReport": {
+                    "progressReportDelayInMilliseconds": 600,
+                    "progressReportIntervalInMilliseconds": 300
+                },
+                "token": "{{STRING}}",
+                "expectedPreviousToken": "{{STRING}}"
+            },
+            "metadata": { }
+        }
+      }
+    ]
+}
     json_Obj = json.dumps(json_Obj)
     return json_Obj
 
@@ -347,7 +372,32 @@ def nextInterview():
     idx = idx+1
     curQuestion = g_result[idx]["question"]
     print (curQuestion)
-    json_Obj['action']['parameters']["question"]["value"] = curQuestion
+    json_Obj = {
+        "version": "2.0",
+        "resultCode": "OK",
+        "output": {
+            'major': {'type': 'MAJOR', 'value': 'SW'}, 'company': {'type': 'COMPANY', 'value': 'SKT'},
+            'question': {'type': 'QUESTION', 'value': curQuestion}
+        },
+        "directives": [
+            {
+                "type": "AudioPlayer.Play",
+                "audioItem": {
+                    "stream": {
+                        "url": "{{STRING}}",
+                        "offsetInMilliseconds": 600,
+                        "progressReport": {
+                            "progressReportDelayInMilliseconds": 600,
+                            "progressReportIntervalInMilliseconds": 300
+                        },
+                        "token": "{{STRING}}",
+                        "expectedPreviousToken": "{{STRING}}"
+                    },
+                    "metadata": {}
+                }
+            }
+        ]
+    }
     json_Obj = json.dumps(json_Obj)
     return json_Obj
 
