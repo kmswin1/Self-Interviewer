@@ -36,6 +36,8 @@ def getConnection():
 
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # session key
 
+API_key = '8674A838-29BC-4AAA-A1F1-5D299D8DE030'
+
 @app.route('/index')
 def index():
     return render_template("index.html")
@@ -309,6 +311,21 @@ def sendEmail():
 
     smtp.quit()
 
+@app.route('/start.interview', methods=['POST'])
+def startInterview():
+    json_Obj = request.get_json()
+    print(json_Obj)
+    return
+
+@app.route('/next.interview', methods=['POST'])
+def nextInterview():
+    json_Obj = request.get_json()
+    print(json_Obj)
+    return
+
+@app.route('health', methods=['GET'])
+def health():
+    return "200 OK"
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', debug=True)
