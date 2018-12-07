@@ -323,7 +323,7 @@ def startInterview():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
     print(json_Obj)
-    if (json_Obj['context']['action']['parameters']["company"]["value"] == 'SKT'):
+    if (json_Obj['action']['parameters']["company"]["value"] == 'SKT'):
         company = 'SK텔레콤'
     sql = "select question from Question where company = %s"
     curs.execute(sql, (company))
@@ -346,7 +346,7 @@ def nextInterview():
     idx = idx+1
     curQuestion = g_result[idx]
     print (curQuestion)
-    json_Obj['context']['action']['parameters']["question"]["value"] = curQuestion
+    json_Obj['action']['parameters']["question"]["value"] = curQuestion
     return json_Obj
 
 @app.route('/health', methods=['GET'])
