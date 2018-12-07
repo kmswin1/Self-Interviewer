@@ -323,7 +323,7 @@ def nextInterview():
     print(json_Obj)
     return
 
-@app.route('health', methods=['GET'])
+@app.route('/health', methods=['GET'])
 def health():
     return "200 OK"
 
