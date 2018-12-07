@@ -329,6 +329,7 @@ def startInterview():
         company = 'SK텔레콤'
     else:
         company = json_Obj['action']['parameters']["company"]["value"]
+    major =  json_Obj['action']['parameters']["major"]["value"]
     sql = "select question from Question where company = %s"
     curs.execute(sql, (company))
     g_result = curs.fetchall()
@@ -341,7 +342,7 @@ def startInterview():
     "version": "2.0",
     "resultCode": "OK",
     "output": {
-        'major': 'SW', 'company': 'SKT',
+        'major': major, 'company': company,
         'question': curQuestion
     },
     "directives": [
@@ -375,11 +376,16 @@ def nextInterview():
     idx = idx+1
     curQuestion = g_result[idx]["question"]
     print (curQuestion)
+    if (json_Obj['action']['parameters']["company"]["value"] == 'SKT'):
+        company = 'SK텔레콤'
+    else:
+        company = json_Obj['action']['parameters']["company"]["value"]
+    major =  json_Obj['action']['parameters']["major"]["value"]
     json_Obj = {
         "version": "2.0",
         "resultCode": "OK",
         "output": {
-            'major': 'SW', 'company': 'SKT',
+            'major': major, 'company': company,
             'question': curQuestion
         },
         "directives": [
