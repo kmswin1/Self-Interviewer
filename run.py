@@ -338,8 +338,8 @@ def startInterview():
     "version": "2.0",
     "resultCode": "OK",
     "output": {
-        'major': {'type': 'MAJOR', 'value': 'SW'}, 'company': {'type': 'COMPANY', 'value': 'SKT'},
-        'question': {'type': 'QUESTION', 'value': curQuestion}
+        'major': 'SW', 'company': 'SKT',
+        'question': curQuestion
     },
     "directives": [
       {
@@ -360,7 +360,7 @@ def startInterview():
       }
     ]
 }
-    json_Obj = json.dumps(json_Obj)
+    json_Obj = json.dumps(json_Obj, ensure_ascii=False)
     return json_Obj
 
 @app.route('/next.interview', methods=['POST'])
@@ -376,8 +376,8 @@ def nextInterview():
         "version": "2.0",
         "resultCode": "OK",
         "output": {
-            'major': {'type': 'MAJOR', 'value': 'SW'}, 'company': {'type': 'COMPANY', 'value': 'SKT'},
-            'question': {'type': 'QUESTION', 'value': curQuestion}
+            'major': 'SW', 'company': 'SKT',
+            'question': curQuestion
         },
         "directives": [
             {
@@ -398,7 +398,7 @@ def nextInterview():
             }
         ]
     }
-    json_Obj = json.dumps(json_Obj)
+    json_Obj = json.dumps(json_Obj, ensure_ascii=False)
     return json_Obj
 
 @app.route('/health', methods=['GET'])
