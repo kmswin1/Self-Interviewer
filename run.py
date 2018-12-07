@@ -327,7 +327,8 @@ def startInterview():
     print(json_Obj)
     if (json_Obj['action']['parameters']["company"]["value"] == 'SKT'):
         company = 'SK텔레콤'
-    company = json_Obj['action']['parameters']["company"]["value"] == 'SKT'
+    else:
+        company = json_Obj['action']['parameters']["company"]["value"]
     sql = "select question from Question where company = %s"
     curs.execute(sql, (company))
     g_result = curs.fetchall()
