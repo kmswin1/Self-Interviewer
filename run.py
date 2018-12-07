@@ -318,6 +318,8 @@ def sendEmail():
 @app.route('/start.interview', methods=['POST'])
 def startInterview():
     global idx
+    global g_result
+    g_result = {}
     idx = 0
     json_Obj = request.get_json()
     conn = getConnection()
@@ -328,7 +330,6 @@ def startInterview():
     company = json_Obj['action']['parameters']["company"]["value"] == 'SKT'
     sql = "select question from Question where company = %s"
     curs.execute(sql, (company))
-    global g_result
     g_result = curs.fetchall()
     conn.commit()
     print (g_result)
