@@ -42,6 +42,9 @@ idx = 0
 
 API_key = '8674A838-29BC-4AAA-A1F1-5D299D8DE030'
 
+company = ""
+major = ""
+
 @app.route('/index')
 def index():
     return render_template("index.html")
@@ -319,6 +322,8 @@ def sendEmail():
 def startInterview():
     global idx
     global g_result
+    global major
+    global company
     g_result = {}
     idx = 0
     json_Obj = request.get_json()
@@ -373,14 +378,11 @@ def nextInterview():
     print(json_Obj)
     global g_result
     global idx
+    global major
+    global company
     idx = idx+1
     curQuestion = g_result[idx]["question"]
     print (curQuestion)
-    if (json_Obj['action']['parameters']["company"]["value"] == 'SKT'):
-        company = 'SK텔레콤'
-    else:
-        company = json_Obj['action']['parameters']["company"]["value"]
-    major =  json_Obj['action']['parameters']["major"]["value"]
     json_Obj = {
         "version": "2.0",
         "resultCode": "OK",
