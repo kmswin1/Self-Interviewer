@@ -334,7 +334,8 @@ def startInterview():
     print ("getQuestions success")
     conn.close()
     curQuestion = g_result[idx]
-    json_Obj['context']['action']['parameters']["question"]["value"] = curQuestion
+    json_Obj['action']['parameters']["question"]["value"] = curQuestion
+    json_Obj = json.dumps(json_Obj)
     return json_Obj
 
 @app.route('/next.interview', methods=['POST'])
@@ -347,6 +348,7 @@ def nextInterview():
     curQuestion = g_result[idx]
     print (curQuestion)
     json_Obj['action']['parameters']["question"]["value"] = curQuestion
+    json_Obj = json.dumps(json_Obj)
     return json_Obj
 
 @app.route('/health', methods=['GET'])
