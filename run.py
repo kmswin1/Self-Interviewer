@@ -333,7 +333,7 @@ def startInterview():
     print (g_result)
     print ("getQuestions success")
     conn.close()
-    curQuestion = g_result[idx]
+    curQuestion = g_result[idx]["question"]
     json_Obj['action']['parameters']["question"]["value"] = curQuestion
     json_Obj = json.dumps(json_Obj)
     return json_Obj
@@ -345,7 +345,7 @@ def nextInterview():
     global g_result
     global idx
     idx = idx+1
-    curQuestion = g_result[idx]
+    curQuestion = g_result[idx]["question"]
     print (curQuestion)
     json_Obj['action']['parameters']["question"]["value"] = curQuestion
     json_Obj = json.dumps(json_Obj)
