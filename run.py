@@ -36,6 +36,10 @@ def getConnection():
 
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # session key
 
+g_result = {}
+
+idx = 0
+
 API_key = '8674A838-29BC-4AAA-A1F1-5D299D8DE030'
 
 @app.route('/index')
@@ -313,14 +317,33 @@ def sendEmail():
 
 @app.route('/start.interview', methods=['POST'])
 def startInterview():
+    global idx
+    idx = 0
     json_Obj = request.get_json()
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
     print(json_Obj)
+    if (json_Obj["company"]["value"] == 'SKT'):
+        company = 'SK텔레콤'
+    sql = "select question from Question where company = %s"
+    curs.execute(sql, (company))
+    global g_result
+    g_result = curs.fetchall()
+    conn.commit()
+    print (g_result)
+    print ("getQuestions success")
+    conn.close()
+    curQuestion = g_result[idx]
     return
 
 @app.route('/next.interview', methods=['POST'])
 def nextInterview():
     json_Obj = request.get_json()
     print(json_Obj)
+    global g_result
+    global idx
+    idx = idx+1
+    curQuestion = g_result[idx]
     return
 
 @app.route('/health', methods=['GET'])
