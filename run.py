@@ -456,7 +456,7 @@ def getHot():
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
     sql = "select text from Info desc by hit"
-    curs.execute(sql, (company))
+    curs.execute(sql)
     g_result = curs.fetchall()
     conn.commit()
     print(g_result)
