@@ -455,7 +455,7 @@ def getHot():
     print (json_Obj)
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
-    sql = "select text from info desc by hit"
+    sql = "select text from Info desc by hit"
     curs.execute(sql, (company))
     g_result = curs.fetchall()
     conn.commit()
@@ -466,6 +466,7 @@ def getHot():
         "version": "2.0",
         "resultCode": "OK",
         "output": {
+            'popular': json_Obj['action']['parameters']["popular"]["value"],
             'question': g_result
         },
         "directives": [
