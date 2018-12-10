@@ -5,6 +5,7 @@ import json
 import pymysql
 import os
 import smtplib
+import random
 from email.mime.text import MIMEText
 
 PWD = os.path.dirname(os.path.realpath(__file__))
@@ -342,6 +343,7 @@ def startInterview():
     print (g_result)
     print ("getQuestions success")
     conn.close()
+    idx = random.randrange(0,len(g_result))
     curQuestion = g_result[idx]["question"]
     json_Obj = {
     "version": "2.0",
