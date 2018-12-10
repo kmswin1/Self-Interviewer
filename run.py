@@ -461,7 +461,7 @@ def getHot():
     conn.commit()
     print(g_result)
     conn.close()
-    g_result = g_result[0]
+    g_result = g_result[0]["text"]
     json_Obj = {
         "version": "2.0",
         "resultCode": "OK",
