@@ -452,6 +452,7 @@ def searchDuedate():
 def getHot():
     g_result = {}
     json_Obj = request.get_json()
+    print (json_Obj)
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
     sql = "select text from info desc by hit"
