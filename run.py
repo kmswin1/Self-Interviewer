@@ -455,13 +455,15 @@ def getHot():
     print (json_Obj)
     conn = getConnection()
     curs = conn.cursor(pymysql.cursors.DictCursor)
-    sql = "select text from Info order by hit desc"
+    sql = "select * from Info order by hit desc"
     curs.execute(sql)
     g_result = curs.fetchall()
     conn.commit()
     print(g_result)
     conn.close()
-    g_result = g_result[0]["text"]
+    g_result = g_result[0]["title"]
+    g_result += '\n'
+    g_result += g_result[0]["text"]
     json_Obj = {
         "version": "2.0",
         "resultCode": "OK",
