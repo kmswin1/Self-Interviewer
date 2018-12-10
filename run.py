@@ -415,7 +415,7 @@ def nextInterview():
     return json_Obj
 
 @app.route('/search.duedate', methods=['POST'])
-def nextInterview():
+def searchDuedate():
     json_Obj = request.get_json()
     print(json_Obj)
     ran = random.randrange(1,60)
