@@ -465,7 +465,6 @@ def getHot():
         "version": "2.0",
         "resultCode": "OK",
         "output": {
-            'major': major, 'company': company,
             'question': g_result
         },
         "directives": [
