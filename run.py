@@ -448,6 +448,48 @@ def searchDuedate():
     json_Obj = json.dumps(json_Obj, ensure_ascii=False)
     return json_Obj
 
+@app.route('/get.Hot', methods=['POST'])
+def getHot():
+    g_result = {}
+    json_Obj = request.get_json()
+    conn = getConnection()
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+    sql = "select text from info desc by hit"
+    curs.execute(sql, (company))
+    g_result = curs.fetchall()
+    conn.commit()
+    print(g_result)
+    conn.close()
+    g_result = g_result[0]
+    json_Obj = {
+        "version": "2.0",
+        "resultCode": "OK",
+        "output": {
+            'major': major, 'company': company,
+            'question': g_result
+        },
+        "directives": [
+            {
+                "type": "AudioPlayer.Play",
+                "audioItem": {
+                    "stream": {
+                        "url": "{{STRING}}",
+                        "offsetInMilliseconds": 600,
+                        "progressReport": {
+                            "progressReportDelayInMilliseconds": 600,
+                            "progressReportIntervalInMilliseconds": 300
+                        },
+                        "token": API_key,
+                        "expectedPreviousToken": "{{STRING}}"
+                    },
+                    "metadata": {}
+                }
+            }
+        ]
+    }
+    json_Obj = json.dumps(json_Obj, ensure_ascii=False)
+    return json_Obj
+
 @app.route('/health', methods=['GET'])
 def health():
     return "200 OK"
