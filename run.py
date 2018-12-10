@@ -461,15 +461,12 @@ def getHot():
     conn.commit()
     print(g_result)
     conn.close()
-    g_result = g_result[0]["title"]
-    g_result += '\n'
-    g_result += g_result[0]["text"]
     json_Obj = {
         "version": "2.0",
         "resultCode": "OK",
         "output": {
-            'popular': json_Obj['action']['parameters']["popular"]["value"],
-            'question': g_result
+            'popular': g_result[0]["title"],
+            'question': g_result[0]["text"]
         },
         "directives": [
             {
