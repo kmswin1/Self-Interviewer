@@ -414,6 +414,40 @@ def nextInterview():
     json_Obj = json.dumps(json_Obj, ensure_ascii=False)
     return json_Obj
 
+@app.route('/search.duedate', methods=['POST'])
+def nextInterview():
+    json_Obj = request.get_json()
+    print(json_Obj)
+    ran = random.randrange(1,60)
+    json_Obj = {
+        "version": "2.0",
+        "resultCode": "OK",
+        "output": {
+            'company': company,
+            'question': ran
+        },
+        "directives": [
+            {
+                "type": "AudioPlayer.Play",
+                "audioItem": {
+                    "stream": {
+                        "url": "{{STRING}}",
+                        "offsetInMilliseconds": 600,
+                        "progressReport": {
+                            "progressReportDelayInMilliseconds": 600,
+                            "progressReportIntervalInMilliseconds": 300
+                        },
+                        "token": API_key,
+                        "expectedPreviousToken": "{{STRING}}"
+                    },
+                    "metadata": {}
+                }
+            }
+        ]
+    }
+    json_Obj = json.dumps(json_Obj, ensure_ascii=False)
+    return json_Obj
+
 @app.route('/health', methods=['GET'])
 def health():
     return "200 OK"
