@@ -361,7 +361,7 @@ def startInterview():
                     "progressReportDelayInMilliseconds": 600,
                     "progressReportIntervalInMilliseconds": 300
                 },
-                "token": "{{STRING}}",
+                "token": API_key,
                 "expectedPreviousToken": "{{STRING}}"
             },
             "metadata": { }
@@ -401,7 +401,7 @@ def nextInterview():
                             "progressReportDelayInMilliseconds": 600,
                             "progressReportIntervalInMilliseconds": 300
                         },
-                        "token": "{{STRING}}",
+                        "token": API_key,
                         "expectedPreviousToken": "{{STRING}}"
                     },
                     "metadata": {}
