@@ -298,7 +298,7 @@
                 var video = document.createElement('video');
                 video.controls = false;
                 var mediaElement = getHTMLMediaElement(video, {
-                    title: '녹화 시작 전입니다.',
+         //           title: '녹화 시작 전입니다.',
                     buttons: ['full-screen'/*, 'take-snapshot'*/],
                     showOnMouseEnter: false,
                     width: 360,
@@ -674,7 +674,7 @@
 
                             button.recordRTC.startRecording();
                             btnPauseRecording.style.display = '';
-                            recordingPlayer.parentNode.parentNode.querySelector('h2').innerHTML = '<img src="https://cdn.webrtc-experiment.com/images/progress.gif">';
+                      //      recordingPlayer.parentNode.parentNode.querySelector('h2').innerHTML = '<img src="https://cdn.webrtc-experiment.com/images/progress.gif">';
                         };
                     }
 
