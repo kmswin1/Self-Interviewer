@@ -43,6 +43,7 @@ var locationJsonArr = [
 ];
 
 // 매칭 사용자 등록
+var register_container = document.getElementById('register_container');
 var inputUserName = document.getElementById('user_name_set')
 var selectCompanySet = document.getElementById('sel_company_set');
 var selectLocationSet = document.getElementById('sel_location_set');
@@ -53,7 +54,8 @@ var inputUserInfo = document.getElementById('user_info_set')
 var selectCompany = document.getElementById('sel_company');
 var selectMajor = document.getElementById('sel_major');
 var selectLocation = document.getElementById('sel_location');
-var user_card = document.getElementById('user_card')
+var user_card = document.getElementById('user_card');
+
 
 // TODO : JSON 파싱해서 select의 option으로 넣어주기
 for(var i = 0; i < companyJsonArr.length; i++) {
@@ -98,6 +100,7 @@ function setMemeber() {
             data: myJSON,
             success: function (data) {
                 //박스 사라짐
+                register_container.style.display = 'none';
                 alert("사용자 등록을 완료했습니다. 이제 원하는 스터디원을 검색해보세요!")
                 console.log("사용자 등록 성공");
             },
@@ -150,7 +153,7 @@ function matchingSearch() {
     // 요청(PUT) 결과를 카드뷰로 그리기
     var myHTML = '';
     for(i = 0; i < userJsonArr.length; i++) {
-        myHTML += '<div class="card">' +
+        myHTML += '<div class="card" onclick=startChat()>' +
             '<img src= "https://www.w3schools.com/howto/img_avatar.png">' +
             '<div class="container2">' +
             '<h4><b>' + userJsonArr[i]['username'] + '</b></h4>' +
@@ -160,4 +163,8 @@ function matchingSearch() {
             '</div>';
     }
     user_card.innerHTML = myHTML;
+}
+
+function startChat() {
+    window.open("http://13.209.186.36:3000/", '_blank', 'resizable=yes, width=450, height=600');
 }
